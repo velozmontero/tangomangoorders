@@ -1,0 +1,53 @@
+.box-border {
+    border: 1px solid grey !important;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+
+.m-top {
+    margin-top: 40px !important;
+}
+
+.m-bottom {
+    margin-bottom: 40px !important;
+}
+
+.p-top {
+    padding-top: 50px;
+}
+
+.p-bottom {
+    padding-bottom: 50px;
+}
+
+.ilike-blue-container {
+    @extend .blue, .lighten-4;
+}
+
+.b-color {
+    background-color: #ccff90;
+}
+
+.b-color1 {
+    background-color: #ffff8d;
+} 
+
+@media only screen and (max-width: 400px){
+    .hide-s{display: none;}
+}
+
+@media only screen and (max-width: 400px){
+    h5 {
+        font-size: 18px;
+    }  
+}
+
+@media only screen and (min-width: 900px){
+    
+}
+
+@media only screen and (min-width: 1080px){
+    
+}

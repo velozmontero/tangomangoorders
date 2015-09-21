@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+        <title>Tango Mango Orders</title>
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+        <div class="container center">
+            <div class="row">
+                <form action="http://www.swolebrain.com:4003/email" method="post"
+                role="form" id="form" name="contactForm" onsubmit="return validateForm(document.contactForm);">
+                    
+                    <div class="container">
+                        
+                        <div class="row p-bottom" style="background-color: #e0e0e0">
+                            <div class="col s12 m4">
+                                <div class="input-field col s6">
+                                   <input type="text" id="style" name="style" class="center validate" required>
+                                   <label for="style">STYLE</label>
+                                </div>
+                                <div class="input-field col s6">
+                                   <input type="text" id="color" name="color" class="center validate" required>
+                                   <label for="color">COLOR</label>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m12 l8">
+                                <div class="input-field col s2">
+                                   <input type="number" id="size" name="size" class="center validate" required>
+                                   <label for="size">XS</label>
+                                </div>
+                                <div class="input-field col s2">
+                                   <input type="number" id="size" name="size" class="center validate" required>
+                                   <label for="size">S</label>
+                                </div>
+                                <div class="input-field col s2">
+                                   <input type="number" id="size" name="size" class="center validate" required>
+                                   <label for="size">M</label>
+                                </div>
+                                <div class="input-field col s2">
+                                   <input type="number" id="size" name="size" class="center validate" required>
+                                   <label for="size">L</label>
+                                </div>
+                                <div class="input-field col s2">
+                                   <input type="number" id="size" name="size" class="center validate" required>
+                                   <label for="size">XL</label>
+                                </div>
+                                <div class="input-field col s2">
+                                   <input type="number" id="size" name="size" class="center validate" required>
+                                   <label for="size">XXL</label>
+                                </div>
+                            </div>
+                            
+                           
+                            <div class="input-field col s12">
+                                <div class="input-field col s5"><h5>PRICE: <span class="right">$</span></h5></div>
+                                <div class="input-field col s3 l1 no-padding">
+                                    <input type="text" id="style" name="style" class="validate box-border center" required>
+                                </div>
+                            </div>     
+                            
+                           
+                                <div class="col s12 b-color1">
+                                    
+                                    <div class="input-field col s5"><h5>PLUS SIZES</h5></div>
+                                    
+                                    <div class="col s7">
+                                        <div class="input-field col s4">
+                                           <input type="number" id="size" name="size" class="center validate" required>
+                                           <label for="size">1X</label>
+                                        </div>
+                                        <div class="input-field col s4">
+                                           <input type="number" id="size" name="size" class="center validate" required>
+                                           <label for="size">2X</label>
+                                        </div>
+                                        <div class="input-field col s4">
+                                           <input type="number" id="size" name="size" class="center validate" required>
+                                           <label for="size">3X</label>
+                                        </div> 
+                                    </div>
+                                  <div class="input-field col s12">
+                                <div class="input-field col s5"><h5>PRICE: <span class="right">$</span></h5></div>
+                                <div class="input-field col s3 l1 no-padding">
+                                    <input type="text" id="style" name="style" class="validate box-border center" required>
+                                </div>
+                            </div> 
+                                </div>
+                            
+                                <div class="col s12">
+                                    <div class="input-field col s12">
+                                      <textarea id="special-instructions" class="materialize-textarea no-padding"></textarea>
+                                      <label for="special-instructions">Special Instructions:</label>
+                                    </div>
+                                </div>
+                            
+                                <div class="col s12 center m-top">
+                                    <button class=" btn waves-effect waves-light z-depth-2 " type="submit" name="add-style" id="add-style">ADD STYLE
+                                    <i class="mdi-action-assignment right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        
+                    </div>
+                    
+                    <div class="container">
+                        
+                        <div class="row">
+                            <div class="col s12 m6">
+                                 <div class="input-field col s2  " style="display: block;">
+                                    <i class="mdi-action-payment prefix"></i>  
+                                 </div>
+
+                                 <div class="input-field col xs10 s10 m10">
+                                    <select class="browser-default" required>
+                                      <option value="" disabled selected>Select-Terms</option>
+                                      <option value="">CC Prepayment</option>
+                                      <option value="">COD</option>    
+                                      <option value="">Net 30</option>
+                                      <option value="">PDC Net 60</option>
+                                      <option value="">PDC Net 90</option>
+                                    </select>
+                                 </div>
+                            </div>
+                            
+                            <div class="col xs12 s12 m6">
+                                <div class="input-field col s2  " style="display: block;">
+                                    <i class="mdi-action-perm-identity prefix"></i> 
+                                 </div>
+
+                                 <div class="input-field col xs10 s10 m10">
+                                    <select class="browser-default" required>
+                                      <option value="" disabled selected>Sales-Representative</option>
+                                      <option value="">Tom Stain</option>
+                                      <option value="">Mindy Carlson</option>    
+                                      <option value="">Kathy Johnson</option>
+                                      <option value="">Jon Katz</option>
+                                      <option value="">Barry Burtman</option>
+                                      <option value="">Daug Taub</option>
+                                      <option value="">Holly Alden</option>
+                                      <option value="">Joey Collins</option>
+                                      <option value="">Marry Saunders</option>
+                                      <option value="">Joe Ackerman</option> 
+                                      <option value="">Kathrine Turner</option>
+                                      <option value="">Barbara B. Fraizer</option>
+                                      <option value="">Diane B. Zundel</option>    
+                                    </select>
+                                </div>
+                            </div>
+                            
+                        </div> 
+                        
+                        <div class="row">
+                            <div class="input-field col s12 m12 l4">
+                                <div class="input-field col s4 m4 l4"><label for="odate">Order Date:</label></div>
+                                <div class="input-field col s8 m8 l8"><input id="odate" name="odate" type="date" class="datepicker" style="text-align: right" required></div>
+                            </div>
+                            
+                            <div class="input-field col s12 m12 l4">
+                                <div class="input-field col s4 m4 l4"><label for="sdate">Ship Date:</label></div>
+                                <div class="input-field col s8 m8 l8"><input id="sdate" name="sdate" type="date" class="datepicker" style="text-align: right" required></div>
+                            </div>
+                            
+                            <div class="input-field col s12 m12 l4">
+                                <div class="input-field col s4 m4 l4"><label for="cdate">Cancel Date:</label></div>
+                                <div class="input-field col s8 m8 l8"><input id="cdate" name="cdate" type="date" class="datepicker" style="text-align: right" required></div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="input-field col s12 l6">
+                               <i class="material-icons prefix">store</i>
+                               <input type="text" id="name" name="name" class="validate" required>
+                               <label for="name">Store Name</label>
+                            </div>
+                            
+                            <div class="input-field col s12 m6">
+                               <i class="material-icons prefix">phone</i>
+                               <input type="tel" id="phone" name="phone" class="validate" required>
+                               <label for="phone">Telephone</label>
+                           </div>
+                        </div>
+                        
+                        <div class="row">    
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">email</i>
+                               <input type="email" id="email" name="email" class="validate" required>
+                               <label for="email">Email</label>
+                            </div>
+                        </div>
+                        
+                        <div class="row p-bottom">    
+                            <div class="input-field col s12 m12 l6 no-padding b-color1">
+                                <div class="input-field col s12">
+                                    <input type="text" id="store-address" name="store-address" class="validate" required>
+                                     <label for="store-address" class="mdi-action-room"> Store Address:<span class="form-required"></span></label>
+                                </div>
+                                
+                                <div class="col s6">
+                                    <input type="text" id="address-city" name="address-city" class="validate" placeholder="City" required>  
+                                </div>
+                                
+                                <div class="col s3">
+                                    <select class="browser-default b-color1" name="state-1" id="state-1" required>
+                                        <option value="" disabled selected>--</option>    
+                                        <option value="AL">AL</option>
+                                        <option value="AK">AK</option>
+                                        <option value="AZ">AZ</option>
+                                        <option value="AR">AR</option>
+                                        <option value="CA">CA</option>
+                                        <option value="CO">CO</option>
+                                        <option value="CT">CT</option>
+                                        <option value="DE">DE</option>
+                                        <option value="DC">DC</option>
+                                        <option value="FL">FL</option>
+                                        <option value="GA">GA</option>
+                                        <option value="HI">HI</option>
+                                        <option value="ID">ID</option>
+                                        <option value="IL">IL</option>
+                                        <option value="IN">IN</option>
+                                        <option value="IA">IA</option>
+                                        <option value="KS">KS</option>
+                                        <option value="KY">KY</option>
+                                        <option value="LA">LA</option>
+                                        <option value="ME">ME</option>
+                                        <option value="MD">MD</option>
+                                        <option value="MA">MA</option>
+                                        <option value="MI">MI</option>
+                                        <option value="MN">MN</option>
+                                        <option value="MS">MS</option>
+                                        <option value="MO">MO</option>
+                                        <option value="MT">MT</option>
+                                        <option value="NE">NE</option>
+                                        <option value="NV">NV</option>
+                                        <option value="NH">NH</option>
+                                        <option value="NJ">NJ</option>
+                                        <option value="NM">NM</option>
+                                        <option value="NY">NY</option>
+                                        <option value="NC">NC</option>
+                                        <option value="ND">ND</option>
+                                        <option value="OH">OH</option>
+                                        <option value="OK">OK</option>
+                                        <option value="OR">OR</option>
+                                        <option value="PA">PA</option>
+                                        <option value="RI">RI</option>
+                                        <option value="SC">SC</option>
+                                        <option value="SD">SD</option>
+                                        <option value="TN">TN</option>
+                                        <option value="TX">TX</option>
+                                        <option value="UT">UT</option>
+                                        <option value="VT">VT</option>
+                                        <option value="VA">VA</option>
+                                        <option value="WA">WA</option>
+                                        <option value="WV">WV</option>
+                                        <option value="WI">WI</option>
+                                        <option value="WY">WY</option>
+                                        <option value="AS">American Samoa</option>
+                                        <option value="GU">Guam</option>
+                                        <option value="MP">Northern Mariana Islands</option>
+                                        <option value="PR">Puerto Rico</option>
+                                        <option value="UM">United States Minor Outlying Islands</option>
+                                        <option value="VI">Virgin Islands</option>
+                                        <option value="AA">Armed Forces Americas</option>
+                                        <option value="AP">Armed Forces Pacific</option>
+                                        <option value="AE">Armed Forces Others</option>    
+                                    </select>
+                                </div>
+                                
+                                <div class="col s3">
+                                    <input type="text" id="address-zip-code" name="address-zip-code" class="validate" placeholder="Zip-code" required>
+                                </div>  
+                            </div>
+                            
+                              <div class="input-field col s12 m12 l6 no-padding b-color">
+                                    <div class="input-field col s12">
+                                        <input type="text" id="ship-address" name="ship-address" class="validate" required>
+                                        <label for="ship-address" class="mdi-action-markunread-mailbox"> Ship to:<span class="form-required"></span></label>
+                                    </div>
+
+                                    <div class="col s6">
+                                        <input type="text" id="ship-city" name="ship-city" class="validate" placeholder="City" required>  
+                                    </div>
+
+                                    <div class="col s3">
+                                        <select class="browser-default b-color" name="state-2" id="state" required>
+                                            <option value="" disabled selected>--</option>    
+                                            <option value="AL">AL</option>
+                                            <option value="AK">AK</option>
+                                            <option value="AZ">AZ</option>
+                                            <option value="AR">AR</option>
+                                            <option value="CA">CA</option>
+                                            <option value="CO">CO</option>
+                                            <option value="CT">CT</option>
+                                            <option value="DE">DE</option>
+                                            <option value="DC">DC</option>
+                                            <option value="FL">FL</option>
+                                            <option value="GA">GA</option>
+                                            <option value="HI">HI</option>
+                                            <option value="ID">ID</option>
+                                            <option value="IL">IL</option>
+                                            <option value="IN">IN</option>
+                                            <option value="IA">IA</option>
+                                            <option value="KS">KS</option>
+                                            <option value="KY">KY</option>
+                                            <option value="LA">LA</option>
+                                            <option value="ME">ME</option>
+                                            <option value="MD">MD</option>
+                                            <option value="MA">MA</option>
+                                            <option value="MI">MI</option>
+                                            <option value="MN">MN</option>
+                                            <option value="MS">MS</option>
+                                            <option value="MO">MO</option>
+                                            <option value="MT">MT</option>
+                                            <option value="NE">NE</option>
+                                            <option value="NV">NV</option>
+                                            <option value="NH">NH</option>
+                                            <option value="NJ">NJ</option>
+                                            <option value="NM">NM</option>
+                                            <option value="NY">NY</option>
+                                            <option value="NC">NC</option>
+                                            <option value="ND">ND</option>
+                                            <option value="OH">OH</option>
+                                            <option value="OK">OK</option>
+                                            <option value="OR">OR</option>
+                                            <option value="PA">PA</option>
+                                            <option value="RI">RI</option>
+                                            <option value="SC">SC</option>
+                                            <option value="SD">SD</option>
+                                            <option value="TN">TN</option>
+                                            <option value="TX">TX</option>
+                                            <option value="UT">UT</option>
+                                            <option value="VT">VT</option>
+                                            <option value="VA">VA</option>
+                                            <option value="WA">WA</option>
+                                            <option value="WV">WV</option>
+                                            <option value="WI">WI</option>
+                                            <option value="WY">WY</option>
+                                            <option value="AS">American Samoa</option>
+                                            <option value="GU">Guam</option>
+                                            <option value="MP">Northern Mariana Islands</option>
+                                            <option value="PR">Puerto Rico</option>
+                                            <option value="UM">United States Minor Outlying Islands</option>
+                                            <option value="VI">Virgin Islands</option>
+                                            <option value="AA">Armed Forces Americas</option>
+                                            <option value="AP">Armed Forces Pacific</option>
+                                            <option value="AE">Armed Forces Others</option>    
+                                        </select>
+                                    </div>
+
+                                    <div class="col s3">
+                                        <input type="text" id="ship-zip-code" name="ship-zip-code" class="validate" placeholder="Zip-code" required>
+                                    </div>  
+                                </div>
+                        </div>
+                            
+                       
+                        
+                            <div class="row">
+                              
+                                <div class="input-field col s12">
+                                      <textarea id="shipping-instructions" class="materialize-textarea no-padding"></textarea>
+                                      <label for="shipping-instructions">Shipping Instructions:</label>
+                                </div>
+                              </div> 
+                    </div>
+                    <div class="row p-top">
+                            <input type= "hidden" name="dest_email" value="velozmontero@gmail.com">
+
+                            <div class="center">
+                                <button class="btn waves-effect waves-light z-depth-2 " type="submit" name="btn" id="btn">Send
+                                <i class="mdi-content-send right"></i>
+                                </button>
+                                <div class="hidden" id="msg" name="btn" class="hidden"></div>
+                            </div>
+                        </div>
+                </form>
+                  
+            </div>
+        </div>
+        
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+        <script>$('.datepicker').pickadate();</script>
+        <script type="text/javascript" src="js/orders.js"></script>    
+    </body>
+  </html>
