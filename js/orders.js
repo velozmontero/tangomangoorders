@@ -29,20 +29,20 @@ $('#add-style').on('click', function(){
 
 
 $('#clear-style').on('click', function(){
-    $("#order-style").val("");
-    $("#order-color").val("");
-    $("#size-xs").val("");
-    $("#size-s").val("");
-    $("#size-m").val("");
-    $("#size-l").val("");
-    $("#size-xl").val("");
-    $("#size-xxl").val("");
-    $("#size-1x").val("");
-    $("#size-2x").val("");
-    $("#size-3x").val("");
-    $("#x-price").val("");
-    $("#r-price").val("");
-    $("#special-instructions").val("");
+    $("#order-style").val("").trigger( "focusout" );
+    $("#order-color").val("").trigger( "focusout" );
+    $("#size-xs").val("").trigger( "focusout" );
+    $("#size-s").val("").trigger( "focusout" );
+    $("#size-m").val("").trigger( "focusout" );
+    $("#size-l").val("").trigger( "focusout" );
+    $("#size-xl").val("").trigger( "focusout" );
+    $("#size-xxl").val("").trigger( "focusout" );
+    $("#size-1x").val("").trigger( "focusout" );
+    $("#size-2x").val("").trigger( "focusout" );
+    $("#size-3x").val("").trigger( "focusout" );
+    $("#x-price").val("").trigger( "focusout" );
+    $("#r-price").val("").trigger( "focusout" );
+    $("#special-instructions").val("").trigger( "focusout" );
 });
                    
 
