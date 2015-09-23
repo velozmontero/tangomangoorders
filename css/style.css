@@ -2,6 +2,10 @@
     border: 1px solid #9e9e9e !important;
 }
 
+.btn-add-clear {
+    width: 200px !important;
+}
+
 .box-border1 {
     border: 1px solid #ffff8d !important;
 }

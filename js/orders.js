@@ -28,5 +28,21 @@ $('#add-style').on('click', function(){
 });
 
 
+$('#clear-style').on('click', function(){
+    $("#order-style").val("");
+    $("#order-color").val("");
+    $("#size-xs").val("");
+    $("#size-s").val("");
+    $("#size-m").val("");
+    $("#size-l").val("");
+    $("#size-xl").val("");
+    $("#size-xxl").val("");
+    $("#size-1x").val("");
+    $("#size-2x").val("");
+    $("#size-3x").val("");
+    $("#x-price").val("");
+    $("#r-price").val("");
+    $("#special-instructions").val("");
+});
+                   
 
-//$("#special-instructions").val("");
