@@ -64,7 +64,7 @@
                                 <div class="input-field col s12">
                                     <div class="input-field col s5"><h5 class="grey-text">PRICE: <span class="right">$</span></h5></div>
                                     <div class="input-field col s3 l2 no-padding">
-                                        <input type="number" min="0.00" max="500.00" id="r-price" name="r-price" class="validate box-border center" required>
+                                        <input type="number" step="0.01" min="0" max="500" id="r-price" name="r-price" class="validate box-border center" required>
                                     </div>
                                 </div>     
                             
@@ -90,8 +90,8 @@
                                     <div class="input-field col s12">
                                         <div class="input-field col s5"><h5 class="grey-text"><i><strong>PRICE:</strong></i><span class="right">$</span></h5></div>
                                         <div class="input-field col s3 l2 no-padding">
-                                            <input type="number" min="0.00" max="500.00" id="x-price" name="x-price" class="validate box-border center">
-                                        </div>
+                                        <input type="number" step="0.01" min="0.00" max="500.00" id="x-price" name="x-price" class="validate box-border center" required>
+                                    </div>
                                    </div> 
                                 </div>
                             
@@ -103,9 +103,14 @@
                                 </div>
                             </div>
                             
-                                <div class="col s12 center m-top">
+                                <div class="col s6 center m-top">
                                     <div class=" btn waves-effect grey darken-3  waves-light z-depth-2 " name="add-style" id="add-style">ADD STYLE
                                     <i class="mdi-action-assignment right"></i>
+                                    </div>
+                                </div>
+                                 <div class="col s6 center m-top">
+                                    <div class=" btn waves-effect red darken-3  waves-light z-depth-2 " name="clear-style" id="clear-style">CLEAR 
+                                    <i class="mdi-action-list right"></i>
                                     </div>
                                 </div>
                             </div>

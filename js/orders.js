@@ -28,3 +28,5 @@ $('#add-style').on('click', function(){
 });
 
 
+
+//$("#special-instructions").val("");
