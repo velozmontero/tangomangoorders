@@ -63,7 +63,7 @@ $('#add-style').on('click', function(){
     
     //Total data combined start//------------------------
     
-    var addRandP= totalReg + totalXPlus;
+    var addRandP= totalRegPcs + totalXPlusPcs;
     console.log(addRandP);
     
      var totalAmount= regTotalCost + xTotalCost;
