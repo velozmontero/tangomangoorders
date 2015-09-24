@@ -21,7 +21,6 @@ var globalArr= [];
 
 $('#add-style').on('click', function(){
     
-    
     //regular sizes info start //------------------------
     
     var arrRegPcs= [parseInt(sizexs.value) , parseInt(sizes.value) , parseInt(sizem.value) , parseInt(sizel.value) , parseInt(sizexl.value) , parseInt(sizexxl.value)];
@@ -168,5 +167,8 @@ $('#clear-style').on('click', function(){
     $("#r-price").val("").trigger( "focusout" );
     $("#special-instructions").val("").trigger( "focusout" );
 });
-                   
+  
+$('td').on('click', function(){
+    
+})
 
