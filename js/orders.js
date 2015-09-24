@@ -9,6 +9,7 @@ var sizexxl= document.getElementById("size-xxl");
 var sizexxx= document.getElementById("size-1x");
 var sizexxxx= document.getElementById("size-2x");
 var sizexxxxx= document.getElementById("size-3x");
+
 var rPrice= document.getElementById("r-price");
 var xPrice= document.getElementById("x-price");
 var sInstr= document.getElementById("special-instructions");
@@ -104,21 +105,6 @@ $('#add-style').on('click', function(){
 });
 
 
-/*
-var arr= [person1, person2,person3];
-arr.push({
-    name: "victor M",
-    hours: 80,
-    wage: 100
-});
-
-var totalwage = 0;
-for (var x=0; x < arr.length; x++){
-    totalwage += arr[x].hours*arr[x].hours;
-}
-*/
-
-
 //Total values start//------------------
 
 $('#add-style').on('click', function(){
@@ -144,7 +130,8 @@ $('#add-style').on('click', function(){
     var globalmoney = document.getElementById("tmoney")
     globalmoney.innerHTML = orderTotalMoney;
 });
-//Total values start//------------------/
+
+//Total values end//------------------/
 
 
 $('#add-style').on('click', function(){
