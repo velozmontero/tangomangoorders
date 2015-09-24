@@ -95,6 +95,7 @@ $('#add-style').on('click', function(){
         totalXPlusPcs: totalXPlusPcs,
         totalRegPcsCost: regTotalCost,
         totalXPlusPcsCost: xTotalCost,
+        
         totalPcsCombined: addRandP,
         TotalPriceCombined: totalAmount 
     });
@@ -118,6 +119,34 @@ for (var x=0; x < arr.length; x++){
 */
 
 
+//Total values start//------------------
+
+$('#add-style').on('click', function(){
+    
+    var orderTotalPcs=0;
+    for (var x=0; x<globalArr.length; x++) {
+        orderTotalPcs += globalArr[x].totalPcsCombined;
+    }
+    console.log(orderTotalPcs);
+    
+    
+    var orderTotalMoney=0;
+    for (var x=0; x<globalArr.length; x++) {
+        orderTotalMoney += globalArr[x].TotalPriceCombined;
+    }
+    console.log(orderTotalMoney);
+    
+    
+    
+    var globalPcs = document.getElementById("tpcs")
+    globalPcs.innerHTML = orderTotalPcs;
+    
+    var globalmoney = document.getElementById("tmoney")
+    globalmoney.innerHTML = orderTotalMoney;
+});
+//Total values start//------------------/
+
+
 $('#add-style').on('click', function(){
     
     $('#order-ow').find('tbody:last-child').append(
@@ -132,7 +161,7 @@ $('#add-style').on('click', function(){
         '</td><td>'+ sizexxx.value +
         '</td><td>'+ sizexxxx.value +
         '</td><td>'+ sizexxxxx.value +
-        '</td></tr>'); 
+        '</td></tr>');
 });
 
 
