@@ -11,7 +11,112 @@ var sizexxxx= document.getElementById("size-2x");
 var sizexxxxx= document.getElementById("size-3x");
 var rPrice= document.getElementById("r-price");
 var xPrice= document.getElementById("x-price");
-   
+var sInstr= document.getElementById("special-instructions");
+
+
+
+var globalArr= [];
+
+
+$('#add-style').on('click', function(){
+    
+    
+    //regular sizes info start //------------------------
+    
+    var arrRegPcs= [parseInt(sizexs.value) , parseInt(sizes.value) , parseInt(sizem.value) , parseInt(sizel.value) , parseInt(sizexl.value) , parseInt(sizexxl.value)];
+    console.log(arrRegPcs);
+    
+    var totalRegPcs= 0;
+    arrRegPcs.forEach(function(elem, index, arrRegPcs) {
+       if (elem && typeof elem === "number"){
+           totalRegPcs += elem;
+       }    
+    });
+    console.log(totalRegPcs);
+    
+    var regTotalCost= totalRegPcs * parseInt(rPrice.value);
+    console.log(regTotalCost);
+    
+   //regular sizes info end //------------------------/ 
+    
+    
+    
+    //Plus sizes info start //------------------------
+    
+    var arrXPlusPcs= [parseInt(sizexxx.value) , parseInt(sizexxxx.value) , parseInt(sizexxxxx.value)];
+    console.log(arrXPlusPcs);
+    
+    var totalXPlusPcs= 0;
+    arrXPlusPcs.forEach(function(elem, index, arrXPlusPcs) {
+       if (elem && typeof elem === "number"){
+           totalXPlusPcs += elem;
+       }    
+    });
+    console.log(totalXPlusPcs);
+    
+     var xTotalCost= totalXPlusPcs * parseInt(xPrice.value);
+    console.log(xTotalCost);
+    
+    //Plus sizes info end //------------------------/
+    
+    
+    
+    //Total data combined start//------------------------
+    
+    var addRandP= totalReg + totalXPlus;
+    console.log(addRandP);
+    
+     var totalAmount= regTotalCost + xTotalCost;
+    console.log(totalAmount); 
+    
+     //Total data combined start//------------------------/
+    
+    
+    
+    //push info to global array start//------------------------
+    
+    globalArr.push({
+        style: orderStyle.value,
+        color: styleColor.value,
+        xs: sizexs.value,
+        s: sizes.value,
+        m: sizem.value,
+        l: sizel.value,
+        xl: sizexl.value,
+        xxl: sizexxl.value,
+        xxx: sizexxx.value,
+        xxxx: sizexxxx.value,
+        xxxxx: sizexxxxx.value,
+        rPrice: rPrice.value,
+        xPrice: xPrice.value,
+        sInstr: sInstr.value,
+        
+        totalRegPcs: totalRegPcs,
+        totalXPlusPcs: totalXPlusPcs,
+        totalRegPcsCost: regTotalCost,
+        totalXPlusPcsCost: xTotalCost,
+        totalPcsCombined: addRandP,
+        TotalPriceCombined: totalAmount 
+    });
+    
+    //push info to global array end//------------------------/
+});
+
+
+/*
+var arr= [person1, person2,person3];
+arr.push({
+    name: "victor M",
+    hours: 80,
+    wage: 100
+});
+
+var totalwage = 0;
+for (var x=0; x < arr.length; x++){
+    totalwage += arr[x].hours*arr[x].hours;
+}
+*/
+
 
 $('#add-style').on('click', function(){
     
@@ -27,56 +132,7 @@ $('#add-style').on('click', function(){
         '</td><td>'+ sizexxx.value +
         '</td><td>'+ sizexxxx.value +
         '</td><td>'+ sizexxxxx.value +
-        '</td></tr>');
-    
-
-    var arrReg= [parseInt(sizexs.value) , parseInt(sizes.value) , parseInt(sizem.value) , parseInt(sizel.value) , parseInt(sizexl.value) , parseInt(sizexxl.value)];
-    console.log(arrReg);
-    
-    var arrXPlus= [parseInt(sizexxx.value) , parseInt(sizexxxx.value) , parseInt(sizexxxxx.value)];
-    console.log(arrXPlus);
-    
-    
-    var totalReg= 0;
-    arrReg.forEach(function(elem, index, arrReg) {
-       if (elem && typeof elem === "number"){
-           totalReg += elem;
-       }    
-    });
-    console.log(totalReg);
-    
-    
-    var totalXPlus= 0;
-    arrXPlus.forEach(function(elem, index, arrReg) {
-       if (elem && typeof elem === "number"){
-           totalXPlus += elem;
-       }    
-    });
-    console.log(totalXPlus);
-    
-    
-    //jquery version 
-   /*     
-    var totalReg= 0;
-    
-   $.each(arrReg, function(elem, index, arrReg) {
-       if (elem && typeof elem === "number"){
-       totalReg += this;
-       }
-   });
-   console.log(totalReg);
-    
-    
-    
-    var totalXPlus= 0;
-    
-   $.each(arrXPlus, function(elem, index, arrReg) {
-       if (elem && typeof elem === "number"){ 
-       totalXPlus += this;
-       }
-   });
-   console.log(totalXPlus);
-   */
+        '</td></tr>'); 
 });
 
 
