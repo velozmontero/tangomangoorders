@@ -71,7 +71,7 @@ $('#add-style').on('click', function(){
     var addRandP= totalRegPcs + totalXPlusPcs;
     console.log(addRandP);
     
-     var totalAmount= regTotalCost + xTotalCost;
+    var totalAmount= regTotalCost + xTotalCost;
     console.log(totalAmount); 
     
      //Total data combined start//------------------------/
@@ -132,7 +132,7 @@ $('#add-style').on('click', function(){
     globalPcs.innerHTML = orderTotalPcs;
     
     var globalmoney = document.getElementById("tmoney")
-    globalmoney.innerHTML = orderTotalMoney;
+    globalmoney.innerHTML = orderTotalMoney.toFixed(2);
 });
 
 //Total values end//------------------/
