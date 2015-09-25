@@ -34,7 +34,10 @@ $('#add-style').on('click', function(){
     });
     console.log(totalRegPcs);
     
-    var regTotalCost= totalRegPcs * parseInt(rPrice.value);
+    //----------------------------------------
+    
+    isNaN(rPrice.value);
+    var regTotalCost = rPrice.value * totalRegPcs ; 
     console.log(regTotalCost);
     
    //regular sizes info end //------------------------/ 
@@ -54,7 +57,9 @@ $('#add-style').on('click', function(){
     });
     console.log(totalXPlusPcs);
     
-     var xTotalCost= totalXPlusPcs * parseInt(xPrice.value);
+    //----------------------------------------
+    isNaN(xPrice.value);
+    var xTotalCost= xPrice.value * totalXPlusPcs;
     console.log(xTotalCost);
     
     //Plus sizes info end //------------------------/
