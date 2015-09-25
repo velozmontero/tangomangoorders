@@ -132,7 +132,7 @@ $('#add-style').on('click', function(){
     globalPcs.innerHTML = orderTotalPcs;
     
     var globalmoney = document.getElementById("tmoney")
-    globalmoney.innerHTML = orderTotalMoney.toFixed(2);
+    globalmoney.innerHTML = "$ "+orderTotalMoney.toFixed(2);
 });
 
 //Total values end//------------------/
