@@ -216,17 +216,17 @@
                         <div class="row">
                             <div class="input-field col s12 m12 l4 no-padding">
                                 <div class="input-field col s4 m4 l4 no-padding"><label for="odate">Order Date:</label></div>
-                                <div class="input-field col s8 m8 l8"><input id="odate" name="odate" type="date" class="datepicker" style="text-align: right" required></div>
+                                <div class="input-field col s8 m8 l8"><input id="odate" name="odate" type="date" class="datepicker" style="text-align: center" required></div>
                             </div>
                             
                             <div class="input-field col s12 m12 l4 no-padding">
                                 <div class="input-field col s4 m4 l4 no-padding"><label for="sdate">Ship Date:</label></div>
-                                <div class="input-field col s8 m8 l8"><input id="sdate" name="sdate" type="date" class="datepicker" style="text-align: right" required></div>
+                                <div class="input-field col s8 m8 l8"><input id="sdate" name="sdate" type="date" class="datepicker" style="text-align: center" required></div>
                             </div>
                             
                             <div class="input-field col s12 m12 l4 no-padding">
                                 <div class="input-field col s4 m4 l4 no-padding"><label for="cdate">Cancel Date:</label></div>
-                                <div class="input-field col s8 m8 l8"><input id="cdate" name="cdate" type="date" class="datepicker" style="text-align: right" required></div>
+                                <div class="input-field col s8 m8 l8"><input id="cdate" name="cdate" type="date" class="datepicker" style="text-align: center" required></div>
                             </div>
                         </div>
                         
@@ -435,16 +435,101 @@
                                 </button>
                                 <div class="hidden" id="msg" name="btn" class="hidden"></div>
                             </div>
+        
+                            <table>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <tr>
+                                                <tr><img class="responsive-img" src="img/logo.png"/></tr>
+
+                                                <th style="padding-bottom: 0px !important;">
+                                                    <span>
+                                                        3100 NW 72nd Ave Suite 117,<br> 
+                                                        Miami FL, 33122<br>
+                                                        Tel: 305-266-2900<br>
+                                                        Fax: 786-603-7999<br>
+                                                        tangomangousa@gmail.com
+                                                    </span>
+                                                </th>
+                                                <th style="float: right;">
+                                                    <span id="order-number"></span><br>
+                                                    <span id="order-date"></span><br>
+                                                    <span id="ship-date"></span><br>
+                                                    <span id="cancel-date"></span>
+                                                </th>
+                                            </tr>
+                                        </tr>
+                                         <tr>
+                                            <th style="padding-bottom: 0px !important;">
+                                                    <span id="order-date"></span><br>
+                                                    <span id="ship-date"></span><br>
+                                                    <span id="cancel-date"></span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                    
+                    
+                    
+                            <div class="row">
+                                
+                                
+                                
+                                <table class="striped centered" id="order" name="order">
+                                    <thead>
+                                      <tr>
+                                          <th data-field="style" style="padding-right: 0px !important;">STYLE</th>
+                                          <th data-field="color" style="padding-right: 0px !important;">COLOR</th>
+                                          <th data-field="xs">XS</th>
+                                          <th data-field="s">S</th>
+                                          <th data-field="m">M</th>
+                                          <th data-field="l">L</th>
+                                          <th data-field="xl">XL</th>
+                                          <th data-field="xxl">XXL</th>
+                                          <th data-field="1x">1X</th>
+                                          <th data-field="2x">2X</th>
+                                          <th data-field="3x">3X</th>
+                                      </tr>
+
+                                    </thead>
+
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+
+                                <table class="striped centered" id="order-ow" name="order-ow">
+                                    <thead>
+                                        <tr class="b-color">
+                                            <th data-field="order-total-money" style="padding-right: 0px !important;">TOTAL PCS:</th>
+                                            <th id="tpcs" money="tpcs"data-field="pcs" style="padding-right: 0px !important;"></th>
+                                            <th data-field="order-total-pcs" style="padding-right: 0px !important;">AMOUNT:</th>
+                                            <th id="tmoney" name="tmoney" data-field="money" style="padding-right: 0px !important;"></th>
+                                        </tr>
+
+                                    </thead>
+
+                                <tbody>
+
+                                </tbody>
+                                </table>    
+                             </div>
+                        </table>
+                            
                         </div>
-                </form>
-                  
+                </form>   
             </div>
         </div>
         
         <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-        <script>$('.datepicker').pickadate();</script>
+        <script>$('.datepicker').pickadate({
+            selectMonths: true,
+            selectYears: 2,
+            format: 'mmm/dd/yyyy'
+        });</script>
         <script type="text/javascript" src="js/orders.js"></script>    
     </body>
   </html>

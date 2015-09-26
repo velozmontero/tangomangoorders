@@ -14,12 +14,43 @@ var rPrice= document.getElementById("r-price");
 var xPrice= document.getElementById("x-price");
 var sInstr= document.getElementById("special-instructions");
 
+var oDate= document.getElementById("odate");
 
 
 var globalArr= [];
 
+var oNum1= Math.floor (Math.random()*9 + 1);
+var oNum2= Math.floor (Math.random()*9 + 1);
+var oNum3= Math.floor (Math.random()*9 + 1);
+var oNum4= Math.floor (Math.random()*9 + 1);
+var oNum5= Math.floor (Math.random()*9 + 1);
+var oNum6= Math.floor (Math.random()*9 + 1);
 
-$('#add-style').on('click', function(){
+
+
+
+
+//Random order number generator start //----------------------
+
+$('#order-number').html("PO#: "+oNum1+oNum2+oNum3+oNum4+oNum5+oNum6);
+
+//Random order number generator end //----------------------/
+
+$('#add-style').on('click', function(){ 
+    
+    
+    
+    //Insert dates on order start //------------------------
+    
+    $('#order-date').html("Order date: "+ odate.value);
+    
+    $('#ship-date').html("Ship start: "+ sdate.value);
+    
+    $('#cancel-date').html("Cancel date: "+ cdate.value);
+    
+    //Insert dates on order start //------------------------/
+    
+    
     
     //regular sizes info start //------------------------
     
