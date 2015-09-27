@@ -37,6 +37,7 @@ var aZipCode= document.getElementById("address-zip-code");
 
 var email= document.getElementById("email");
 
+var sameAS= document.getElementById("same-as");
 
 //Random order number generator start //----------------------
 
@@ -248,10 +249,23 @@ $('#phone').change(function(){
     $('#sold-to-phone').html("Tel: "+phone.value);
 });
 
-//On change handlers for fillin up customer information on order start//-------------------
+$('#store-name').change(function(){
+    $('#sold-to-store-name').html(stsn.value);
+});
+
+//On change handlers for fillin up customer information on order end//-------------------/
      
 
-$('td').on('click', function(){
+
+//Check box handler start //-----------------
+
+
+if (sameAS.checked){
     
-});
+   $('#ship-address').val(storeAdd.value);
+
+}
+ 
+
+//Check box handler start //-----------------/
 
