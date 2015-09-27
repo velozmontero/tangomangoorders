@@ -45,6 +45,9 @@ var shipState= document.getElementById('state-2');
 var shipZipCode= document.getElementById('ship-zip-code');
 var shipInstr= document.getElementById('shipping-instructions');
 
+var buyer= document.getElementById("buyer");
+var rep= document.getElementById("rep");
+var terms= document.getElementById("terms");
 //Random order number generator start //----------------------
 
 $('#order-number').html("PO#: "+oNum1+oNum2+oNum3+oNum4+oNum5+oNum6);
@@ -342,9 +345,19 @@ $('#shipping-instructions').change(function(){
     $('#ship-to-instr').html(shipInstr.value);
 });
 
-
 //On change handlers for fillin up customer information on order (SHIP TO SECTION) end//-------------------/
 
+$('#buyer').change(function(){
+    $('#buyer-1').html("Buyer: "+buyer.value);
+});
+
+$('#rep').change(function(){
+    $('#sales-rep').html("Sales Rep: "+rep.value);
+});
+
+$('#terms').change(function(){
+    $('#terms-1').html("Terms: "+terms.value);
+});
 
 
 

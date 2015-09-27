@@ -175,13 +175,13 @@
                                  </div>
 
                                  <div class="input-field col xs10 s10 m10">
-                                    <select class="browser-default" required>
+                                    <select class="browser-default" id="terms" name="terms" required>
                                       <option value="" disabled selected>Select-Terms</option>
-                                      <option value="">CC Prepayment</option>
-                                      <option value="">COD</option>    
-                                      <option value="">Net 30</option>
-                                      <option value="">PDC Net 60</option>
-                                      <option value="">PDC Net 90</option>
+                                      <option value="CC Prepayment">CC Prepayment</option>
+                                      <option value="COD">COD</option>    
+                                      <option value="Net 30">Net 30</option>
+                                      <option value="PDC Net 60">PDC Net 60</option>
+                                      <option value="PDC Net 90">PDC Net 90</option>
                                     </select>
                                  </div>
                             </div>
@@ -192,21 +192,21 @@
                                  </div>
 
                                  <div class="input-field col xs10 s10 m10">
-                                    <select class="browser-default" required>
+                                    <select class="browser-default" id="rep" name="rep" required>
                                       <option value="" disabled selected>Sales-Representative</option>
-                                      <option value="">Tom Stain</option>
-                                      <option value="">Mindy Carlson</option>    
-                                      <option value="">Kathy Johnson</option>
-                                      <option value="">Jon Katz</option>
-                                      <option value="">Barry Burtman</option>
-                                      <option value="">Daug Taub</option>
-                                      <option value="">Holly Alden</option>
-                                      <option value="">Joey Collins</option>
-                                      <option value="">Marry Saunders</option>
-                                      <option value="">Joe Ackerman</option> 
-                                      <option value="">Kathrine Turner</option>
-                                      <option value="">Barbara B. Fraizer</option>
-                                      <option value="">Diane B. Zundel</option>    
+                                      <option value="Tom Stain">Tom Stain</option>
+                                      <option value="Mindy Carlson">Mindy Carlson</option>    
+                                      <option value="Kathy Johnson">Kathy Johnson</option>
+                                      <option value="Jon Katz">Jon Katz</option>
+                                      <option value="Barry Burtman">Barry Burtman</option>
+                                      <option value="Daug Taub">Daug Taub</option>
+                                      <option value="Holly Alden">Holly Alden</option>
+                                      <option value="Joey Collins">Joey Collins</option>
+                                      <option value="Marry Saunders">Marry Saunders</option>
+                                      <option value="Joe Ackerman">Joe Ackerman</option> 
+                                      <option value="Kathrine Turner">Kathrine Turner</option>
+                                      <option value="Barbara B. Fraizer">Barbara B. Fraizer</option>
+                                      <option value="Diane B. Zundel">Diane B. Zundel</option>    
                                     </select>
                                 </div>
                             </div>
@@ -506,17 +506,19 @@
                                     <thead>
                                         <tr>
                                             <th style="border: 2px solid; width: 25%;">
-                                               <span>Buyer: Pepito Perez</span><br>
+                                               <span id="buyer-1" name="buyer-1">Buyer:</span><br>
                                             </th>
                                         
                                             <th style="border: 2px solid;  width: 25%;">
-                                               <span>Sales Rep: Maria Montero</span><br>
+                                               <span id="sales-rep" name="sales-rep">Sales Rep:</span><br>
                                             </th>
+                                            
                                             <th style="border: 2px solid;  width: 25%;">
-                                               <span>Ship Via: Ups</span><br>
+                                               <span id="ship-via" name="ship-via">Ship Via: UPS</span><br>
                                             </th>
+                                            
                                             <th style="border: 2px solid;  width: 25%;">
-                                               <span>Terms: Net 30</span><br>
+                                               <span id="terms-1" name="terms-1">Terms:</span><br>
                                             </th>
                                            
                                         </tr>
