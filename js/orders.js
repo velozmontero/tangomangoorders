@@ -39,6 +39,7 @@ var email= document.getElementById("email");
 
 var sameAS= document.getElementById("same-as");
 
+var shipAdd= document.getElementById('ship-address');
 //Random order number generator start //----------------------
 
 $('#order-number').html("PO#: "+oNum1+oNum2+oNum3+oNum4+oNum5+oNum6);
@@ -138,7 +139,7 @@ $('#add-style').on('click', function(){
         xxxxx: sizexxxxx.value,
         rPrice: rPrice.value,
         xPrice: xPrice.value,
-        sInstr: sInstr.value,
+        description: description.value,
         
         totalRegPcs: totalRegPcs,
         totalXPlusPcs: totalXPlusPcs,
@@ -262,7 +263,7 @@ $('#store-name').change(function(){
 
 if (sameAS.checked){
     
-   $('#ship-address').val(storeAdd.value);
+   shipAdd.value=storeAdd.value;
 
 }
  
