@@ -220,7 +220,7 @@ $('#clear-style').on('click', function(){
 
 
 
-//On change handlers for fillin up customer information on order start//-------------------
+//On change handlers for fillin up customer information on order (SOLD TO SECTION) start//-------------------
 
 $('#store-name').change(function(){
     $('#sold-to-store-name').html(stsn.value);
@@ -250,23 +250,82 @@ $('#phone').change(function(){
     $('#sold-to-phone').html("Tel: "+phone.value);
 });
 
+//On change handlers for fillin up customer information on order (SOLD TO SECTION) end//-------------------/
+
+//On change handlers for fillin up customer information on order (SHIP TO SECTION) start//-------------------
+
 $('#store-name').change(function(){
     $('#sold-to-store-name').html(stsn.value);
 });
 
-//On change handlers for fillin up customer information on order end//-------------------/
-     
+$('#store-address').change(function(){
+    $('#sold-to-address').html(storeAdd.value);
+});
+
+$('#address-city').change(function(){
+    $('#sold-to-city').html(" "+addCity.value);
+});
+
+$('#state-1').change(function(){
+    $('#sold-to-state').html(" "+state.value+",");
+});
+
+$('#address-zip-code').change(function(){
+    $('#sold-to-zip_code').html(" "+aZipCode.value);
+});
+
+$('#email').change(function(){
+    $('#sold-to-email').html(email.value);
+});
+
+
+//On change handlers for fillin up customer information on order (SHIP TO SECTION) end//-------------------/
+
 
 
 //Check box handler start //-----------------
 
 
-if (sameAS.checked){
-    
-   shipAdd.value=storeAdd.value;
+    $('#store-address').change(function(){
+        if (sameAS.checked){
+            $("#ship-address").val(storeAdd.value).trigger( "focusin" );
+        }    
+    });
 
-}
- 
+    $('#address-city').change(function(){
+        if (sameAS.checked){
+            $("#ship-city").val(addCity.value).trigger( "focusin" );
+        }    
+    });
+
+    $('#state-1').change(function(){
+        if (sameAS.checked){
+            $("#state-2").val(state.value).trigger( "focusin" );
+        }    
+    });
+
+    $('#address-zip-code').change(function(){
+        if (sameAS.checked){
+            $("#ship-zip-code").val(aZipCode.value).trigger( "focusin" );
+        }    
+    });
+    
+    $('#same-as').click(function(){ 
+            if (sameAS.checked){
+                $("#ship-address").val(storeAdd.value).trigger( "focusin" );
+                $("#ship-city").val(addCity.value).trigger( "focusin" );
+                $("#state-2").val(state.value).trigger( "focusin" );
+                $("#ship-zip-code").val(aZipCode.value).trigger( "focusin" );
+                
+            }
+            else{
+                $("#ship-address").val("").trigger( "focusout" );
+                $("#ship-city").val("").trigger( "focusout" );
+                $("#state-2").val("").trigger( "focusout" );
+                $("#ship-zip-code").val("").trigger( "focusout" );
+            }
+    });
+
 
 //Check box handler start //-----------------/
 
