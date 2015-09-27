@@ -171,7 +171,7 @@
                         <div class="row">
                             <div class="col s12 m6">
                                  <div class="input-field col s2  " style="display: block;">
-                                    <i class="mdi-action-payment prefix"></i>  
+                                    <i class="mdi-action-payment prefix" style="position: relative !important;"></i>  
                                  </div>
 
                                  <div class="input-field col xs10 s10 m10">
@@ -186,9 +186,9 @@
                                  </div>
                             </div>
                             
-                            <div class="col xs12 s12 m6">
+                            <div class="col s12 m6">
                                 <div class="input-field col s2" style="display: block;">
-                                    <i class="mdi-action-perm-identity prefix"></i> 
+                                    <i class="mdi-action-perm-identity prefix" style="position: relative !important;"></i> 
                                  </div>
 
                                  <div class="input-field col xs10 s10 m10">
@@ -237,7 +237,7 @@
                                <label for="name">Store Name</label>
                             </div>
                             
-                            <div class="input-field col s12 m6">
+                            <div class="input-field col s12 l6">
                                <i class="material-icons prefix">phone</i>
                                <input type="tel" id="phone" name="phone" class="validate" required>
                                <label for="phone">Telephone</label>
@@ -245,10 +245,16 @@
                         </div>
                         
                         <div class="row">    
-                            <div class="input-field col s12">
+                            <div class="input-field col s12 l6">
                                 <i class="material-icons prefix">email</i>
                                <input type="email" id="email" name="email" class="validate" required>
                                <label for="email">Email</label>
+                            </div>
+                            
+                            <div class="input-field col s12 l6">
+                               <i class="material-icons prefix">store</i>
+                               <input type="text" id="name" name="name" class="validate" required>
+                               <label for="name">Buyer</label>
                             </div>
                         </div>
                         
@@ -418,16 +424,16 @@
                             
                        
                         
-                            <div class="row">
-                              
-                                <div class="input-field col s12">
-                                      <textarea id="shipping-instructions" class="materialize-textarea no-padding"></textarea>
-                                      <label for="shipping-instructions">Shipping Instructions:</label>
-                                </div>
-                              </div> 
+                        <div class="row">
+ 
+                            <div class="input-field col s12">
+                                  <textarea id="shipping-instructions" class="materialize-textarea no-padding"></textarea>
+                                  <label for="shipping-instructions">Shipping Instructions:</label>
+                            </div>
+                        </div> 
                     </div>
                     
-                     <table>
+                    <table>
                                 <table>
                                     <thead>
                                         <tr>
@@ -453,76 +459,58 @@
                                         </tr>
                                         
                                     </thead>
-                                </table>
+                               
                                 
-                                <table>
+                                
                                     <thead>
                                         <tr>
                                             <tr>
                                                 
-                                                 <th style="border: 2px solid;">
+                                                <th style="border: 2px solid;  width: 50%;">
                                                     <span>Sold to:</span><br>
-                                                    <span>Lola la coja</span><br>  
-                                                    <span>3100 NW 72nd Ave Suite 117,</span><br> 
-                                                    <span>Miami FL, 33122</span><br>
-                                                    <span>Tel: 305-266-2900</span><br>
-                                                    <span>Fax: 786-603-7999</span><br>
-                                                    <span>tangomangousa@gmail.com</span>
+                                                    <span id="sold-to-store-name" name="sold-to-store-name">Lola la coja</span><br>  
+                                                    <span id="sold-to-address" name="sold-to-address">3100 NW 72nd Ave Suite 117,</span><br> 
+                                                    <span id="sold-to-address-city-st-zip_code" name="sold-to-address-city-st-zip_code">Miami FL, 33122</span><br>
+                                                    <span id="sold-to-phone" name="sold-to">Tel: 305-266-2900</span><br>
+                                                    <span id="sold-to-fax" name="sold-to">Fax: 786-603-7999</span><br>
+                                                    <span id="sold-to-email" name="sold-to">tangomangousa@gmail.com</span>
                                                 </th>
                                                  
-                                                <th style="border: 2px solid;">
+                                                <th style="border: 2px solid; width: 50%;">
                                                     <span>Ship to:</span><br>
-                                                    <span>Lola la coja</span><br>
-                                                    <span>3100 NW 72nd Ave Suite 117,</span><br> 
-                                                    <span>Miami FL, 33122</span><br>
-                                                    <span>Tel: 305-266-2900</span><br>
-                                                    <span>Fax: 786-603-7999</span><br>
-                                                    <span>tangomangousa@gmail.com</span>
+                                                    <span id="ship-to-store-name" name="ship-to-name">Lola la coja</span><br>
+                                                    <span id="ship-to-address" name="ship-to-name">3100 NW 72nd Ave Suite 117,</span><br> 
+                                                    <span id="ship-to-address-city-st-zip_code" name="ship-to-address-city-st-zip_code">Miami FL, 33122</span><br><br>
+                                                    
+                                                    <span>Special Instructions:</span><br>
+                                                    <span id="ship-to-instr" name="ship-to-instr">Split in 2 to 3 Shipments.</span>
                                                 </th>
                                             </tr>
                                         </tr>
-                                         <tr><th><!--Spacer--></th></tr>
+                                        <tr><th><!--Spacer--></th><th><!--Spacer--></th></tr>
                                     </thead>
                                 </table>
             
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th style="border: 2px solid;">
+                                            <th style="border: 2px solid; width: 25%;">
                                                <span>Buyer: Pepito Perez</span><br>
                                             </th>
-                                            <th style="border: 2px solid;">
-                                               <span>Tel: 305-266-2900</span><br>
+                                        
+                                            <th style="border: 2px solid;  width: 25%;">
+                                               <span>Sales Rep: Maria Montero</span><br>
                                             </th>
-                                            <th style="border: 2px solid;">
-                                               <span>Fax: 305-266-2900</span><br>
-                                            </th>
-                                            <th style="border: 2px solid;">
-                                                <span>Email: tangomangousa@gmail.com</span>
-                                            </th>
-                                        </tr>
-                                       
-                                        <tr>
-                                            <th style="border: 2px solid;">
-                                               <span>Sales Rep: Pepito Perez</span><br>
-                                            </th>
-                                            <th style="border: 2px solid;">
+                                            <th style="border: 2px solid;  width: 25%;">
                                                <span>Ship Via: Ups</span><br>
                                             </th>
-                                            <th style="border: 2px solid;">
+                                            <th style="border: 2px solid;  width: 25%;">
                                                <span>Terms: Net 30</span><br>
                                             </th>
-                                            <th style="border: 2px solid;">
-                                                <span>Special Instructions: Please ship ASAP</span>
-                                            </th>
+                                           
                                         </tr>
                                     </thead>
                                 </table>
-                    
-                    
-                    
-                    
-                            <div class="row" style="padding-top: 40px;">
                                 
                                 <table class="striped centered" id="order" name="order">
                                     <thead>
@@ -562,7 +550,7 @@
 
                                 </tbody>
                                 </table>    
-                             </div>
+                            
                         </table>
                     
                     <div class="row p-top">
