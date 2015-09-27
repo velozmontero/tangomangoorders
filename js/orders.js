@@ -12,7 +12,7 @@ var sizexxxxx= document.getElementById("size-3x");
 
 var rPrice= document.getElementById("r-price");
 var xPrice= document.getElementById("x-price");
-var sInstr= document.getElementById("special-instructions");
+var description= document.getElementById("description");
 
 var oDate= document.getElementById("odate");
 
@@ -27,7 +27,15 @@ var oNum5= Math.floor (Math.random()*9 + 1);
 var oNum6= Math.floor (Math.random()*9 + 1);
 
 
+var stsn= document.getElementById("store-name");
+var phone= document.getElementById("phone");
 
+var storeAdd= document.getElementById("store-address");
+var addCity= document.getElementById("address-city");
+var state= document.getElementById("state-1");
+var aZipCode= document.getElementById("address-zip-code");
+
+var email= document.getElementById("email");
 
 
 //Random order number generator start //----------------------
@@ -36,9 +44,13 @@ $('#order-number').html("PO#: "+oNum1+oNum2+oNum3+oNum4+oNum5+oNum6);
 
 //Random order number generator end //----------------------/
 
+
+
+
+//on click process start //---------------------------------------------------
+
 $('#add-style').on('click', function(){ 
-    
-    
+      
     
     //Insert dates on order start //------------------------
     
@@ -201,10 +213,45 @@ $('#clear-style').on('click', function(){
     $("#size-3x").val("").trigger( "focusout" );
     $("#x-price").val("").trigger( "focusout" );
     $("#r-price").val("").trigger( "focusout" );
-    $("#special-instructions").val("").trigger( "focusout" );
+    $("#description").val("").trigger( "focusout" );
 });
-  
+
+
+
+//On change handlers for fillin up customer information on order start//-------------------
+
+$('#store-name').change(function(){
+    $('#sold-to-store-name').html(stsn.value);
+});
+
+$('#store-address').change(function(){
+    $('#sold-to-address').html(storeAdd.value);
+});
+
+$('#address-city').change(function(){
+    $('#sold-to-city').html(" "+addCity.value);
+});
+
+$('#state-1').change(function(){
+    $('#sold-to-state').html(" "+state.value+",");
+});
+
+$('#address-zip-code').change(function(){
+    $('#sold-to-zip_code').html(" "+aZipCode.value);
+});
+
+$('#email').change(function(){
+    $('#sold-to-email').html(email.value);
+});
+
+$('#phone').change(function(){
+    $('#sold-to-phone').html("Tel: "+phone.value);
+});
+
+//On change handlers for fillin up customer information on order start//-------------------
+     
+
 $('td').on('click', function(){
     
-})
+});
 

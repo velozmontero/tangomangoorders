@@ -97,8 +97,8 @@
                             
                                 <div class="col s12">
                                     <div class="input-field col s12">
-                                      <textarea id="special-instructions" class="materialize-textarea no-padding"></textarea>
-                                      <label for="special-instructions">Special Instructions:</label>
+                                      <textarea id="description" name="description" class="materialize-textarea no-padding"></textarea>
+                                      <label for="description">Description: </label>
                                     </div>
                                 </div>
                             </div>
@@ -233,7 +233,7 @@
                         <div class="row">
                             <div class="input-field col s12 l6">
                                <i class="material-icons prefix">store</i>
-                               <input type="text" id="name" name="name" class="validate" required>
+                               <input type="text" id="store-name" name="store-name" class="validate" required>
                                <label for="name">Store Name</label>
                             </div>
                             
@@ -252,8 +252,8 @@
                             </div>
                             
                             <div class="input-field col s12 l6">
-                               <i class="material-icons prefix">store</i>
-                               <input type="text" id="name" name="name" class="validate" required>
+                               <i class="material-icons prefix">assignment_ind</i>
+                               <input type="text" id="buyer" name="buyer" class="validate" required>
                                <label for="name">Buyer</label>
                             </div>
                         </div>
@@ -262,7 +262,7 @@
                             <div class="input-field col s12 m12 l6 no-padding b-color1">
                                 <div class="input-field col s12">
                                     <input type="text" id="store-address" name="store-address" class="validate" required>
-                                     <label for="store-address" class="mdi-action-room"> Store Address:<span class="form-required"></span></label>
+                                     <label for="store-address" class="mdi-action-room"> Sold To:<span class="form-required"></span></label>
                                 </div>
                                 
                                 <div class="col s6">
@@ -438,16 +438,17 @@
                                     <thead>
                                         <tr>
                                             <tr>
-                                                <tr><img class="responsive-img" src="img/logo.png"/></tr>
-
-                                                <th>
-                                                    <span>
-                                                        3100 NW 72nd Ave Suite 117,<br> 
-                                                        Miami FL, 33122<br>
-                                                        Tel: 305-266-2900<br>
+                                                <tr><img class="responsive-img" src="img/logo.png"/><br>
+                                                     <span>
+                                                        3100 NW 72nd Ave Suite 117, Miami FL, 33122<br> 
+                                                        Tel: 305-266-2900 &nbsp;
                                                         Fax: 786-603-7999<br>
                                                         tangomangousa@gmail.com
                                                     </span>
+                                                </tr>
+
+                                                <th>
+                                                   
                                                 </th>
                                                 <th style="float: right;">
                                                     <span id="order-number"></span><br><br>
@@ -467,20 +468,24 @@
                                             <tr>
                                                 
                                                 <th style="border: 2px solid;  width: 50%;">
-                                                    <span>Sold to:</span><br>
-                                                    <span id="sold-to-store-name" name="sold-to-store-name">Lola la coja</span><br>  
-                                                    <span id="sold-to-address" name="sold-to-address">3100 NW 72nd Ave Suite 117,</span><br> 
-                                                    <span id="sold-to-address-city-st-zip_code" name="sold-to-address-city-st-zip_code">Miami FL, 33122</span><br>
-                                                    <span id="sold-to-phone" name="sold-to">Tel: 305-266-2900</span><br>
-                                                    <span id="sold-to-fax" name="sold-to">Fax: 786-603-7999</span><br>
-                                                    <span id="sold-to-email" name="sold-to">tangomangousa@gmail.com</span>
+                                                    <span>Sold to:</span><br><br>
+                                                    <span id="sold-to-store-name" name="sold-to-store-name"></span><br>  
+                                                    <span id="sold-to-address" name="sold-to-address"></span><br> 
+                                                    <span id="sold-to-city" name="sold-to-city"></span>
+                                                    <span id="sold-to-state" name="sold-to-state"></span>
+                                                    <span id="sold-to-zip_code" name="sold-to-zip_code"></span><br>
+                                                    <span id="sold-to-phone" name="sold-to-phone"></span><br>
+                                                    <span id="sold-to-email" name="sold-to-email"></span><br>
+                                                    <span><!--space to make it visualy even--></span><br>
                                                 </th>
                                                  
                                                 <th style="border: 2px solid; width: 50%;">
-                                                    <span>Ship to:</span><br>
+                                                    <span>Ship to:</span><br><br>
                                                     <span id="ship-to-store-name" name="ship-to-name">Lola la coja</span><br>
-                                                    <span id="ship-to-address" name="ship-to-name">3100 NW 72nd Ave Suite 117,</span><br> 
-                                                    <span id="ship-to-address-city-st-zip_code" name="ship-to-address-city-st-zip_code">Miami FL, 33122</span><br><br>
+                                                    <span id="ship-to-address" name="ship-to-address">3100 NW 72nd Ave Suite 117,</span><br> 
+                                                    <span id="ship-to-city" name="ship-to-city">Miami </span>
+                                                    <span id="ship-to-state" name="ship-to-state">FL, </span>
+                                                    <span id="ship-to-zip_code" name="ship-to-zip_code">33122</span><br><br>
                                                     
                                                     <span>Special Instructions:</span><br>
                                                     <span id="ship-to-instr" name="ship-to-instr">Split in 2 to 3 Shipments.</span>
@@ -517,15 +522,21 @@
                                       <tr>
                                           <th data-field="style" style="padding-right: 0px !important;">STYLE</th>
                                           <th data-field="color" style="padding-right: 0px !important;">COLOR</th>
+                                          <th data-field="color" style="padding-right: 0px !important;">DESCRIPTION</th>
                                           <th data-field="xs">XS</th>
                                           <th data-field="s">S</th>
                                           <th data-field="m">M</th>
                                           <th data-field="l">L</th>
                                           <th data-field="xl">XL</th>
                                           <th data-field="xxl">XXL</th>
+                                          <th data-field="qtyr">Qty</th>
+                                          <th data-field="pricer">Price</th>
                                           <th data-field="1x">1X</th>
                                           <th data-field="2x">2X</th>
                                           <th data-field="3x">3X</th>
+                                          <th data-field="qtyx">Qty</th>
+                                          <th data-field="pricex">Price</th>
+                                          <th data-field="3x">Total</th>
                                       </tr>
 
                                     </thead>
