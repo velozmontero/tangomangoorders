@@ -206,11 +206,18 @@ $('#add-style').on('click', function(){
     
     
     
-    var globalPcs = document.getElementById("tpcs")
+    var globalPcs = document.getElementById("tpcs");
     globalPcs.innerHTML = orderTotalPcs;
     
-    var globalmoney = document.getElementById("tmoney")
+    var globalmoney = document.getElementById("tmoney");
     globalmoney.innerHTML = "$ "+orderTotalMoney.toFixed(2);
+    
+    
+    var orderGlobalPcs = document.getElementById("tpcs-1");
+    orderGlobalPcs.innerHTML = orderTotalPcs;
+    
+    var orderGlobalMoney= document.getElementById("tmoney-1");
+    orderGlobalMoney.innerHTML = "$ "+orderTotalMoney.toFixed(2);
 });
 
 //Total values end//------------------/
