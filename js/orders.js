@@ -165,7 +165,9 @@ $('#add-style').on('click', function(){
     $('#order').find('tbody:last-child').append(
         '<tr><td>'+ orderStyle.value +
         '</td><td>'+ styleColor.value +
-        '</td><td>'+ description.value +
+        
+        '</td><td class="hide-on-med-and-down">'+ description.value +
+        
         '</td><td>'+ sizexs.value +
         '</td><td>'+ sizes.value +
         '</td><td>'+ sizem.value +
@@ -173,16 +175,16 @@ $('#add-style').on('click', function(){
         '</td><td>'+ sizexl.value +
         '</td><td>'+ sizexxl.value +
         
-        '</td><td>'+ totalRegPcs +
-        '</td><td>'+ '$ '+rPrice.value +
+        '</td><td class="hide-on-med-and-down">'+ totalRegPcs +
+        '</td><td class="hide-on-med-and-down">'+ '$ '+rPrice.value +
         
         '</td><td>'+ sizexxx.value +
         '</td><td>'+ sizexxxx.value +
         '</td><td>'+ sizexxxxx.value +
         
-        '</td><td>'+ totalXPlusPcs +
-        '</td><td>'+ '$ '+xPrice.value +
-        '</td><td>'+ '$ '+totalAmount +
+        '</td><td class="hide-on-med-and-down">'+ totalXPlusPcs +
+        '</td><td class="hide-on-med-and-down">'+ '$ '+xPrice.value +
+        '</td><td class="hide-on-med-and-down">'+ '$ '+totalAmount +
         '</td></tr>');
 });
 
