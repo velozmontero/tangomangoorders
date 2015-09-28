@@ -17,7 +17,8 @@ var description= document.getElementById("description");
 
 
 var oDate= document.getElementById("odate");
-
+var sDate= document.getElementById("sdate");
+var cDate= document.getElementById("cdate");
 
 var globalArr= [];
 
@@ -50,6 +51,8 @@ var shipInstr= document.getElementById('shipping-instructions');
 var buyer= document.getElementById("buyer");
 var rep= document.getElementById("rep");
 var terms= document.getElementById("terms");
+
+
 //Random order number generator start //----------------------
 
 $('#order-number').html("PO#: "+oNum1+oNum2+oNum3+oNum4+oNum5+oNum6);
@@ -58,23 +61,27 @@ $('#order-number').html("PO#: "+oNum1+oNum2+oNum3+oNum4+oNum5+oNum6);
 
 
 
+//Insert dates on order start //------------------------
+
+$('#odate').change(function(){
+    $('#order-date').html("Order date: "+ oDate.value);
+});
+
+$('#sdate').change(function(){
+    $('#ship-date').html("Ship start: "+ sDate.value);
+});
+
+$('#cdate').change(function(){
+    $('#cancel-date').html("Cancel date: "+ cDate.value);
+});
+
+//Insert dates on order start //------------------------/
+
+
 
 //on click process start //---------------------------------------------------
 
 $('#add-style').on('click', function(){ 
-      
-    
-    //Insert dates on order start //------------------------
-    
-    $('#order-date').html("Order date: "+ odate.value);
-    
-    $('#ship-date').html("Ship start: "+ sdate.value);
-    
-    $('#cancel-date').html("Cancel date: "+ cdate.value);
-    
-    //Insert dates on order start //------------------------/
-    
-    
     
     //regular sizes info start //------------------------
     
