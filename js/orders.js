@@ -310,7 +310,7 @@ $('#clear-style').on('click', function(){
     });
 
 
-//Check box handler start //-----------------/
+//Check box handler end //-----------------/
 
 
 
