@@ -14,6 +14,8 @@ var rPrice= document.getElementById("r-price");
 var xPrice= document.getElementById("x-price");
 var description= document.getElementById("description");
 
+
+
 var oDate= document.getElementById("odate");
 
 
@@ -159,6 +161,29 @@ $('#add-style').on('click', function(){
     });
     
     //push info to global array end//------------------------/
+    
+    $('#order').find('tbody:last-child').append(
+        '<tr><td>'+ orderStyle.value +
+        '</td><td>'+ styleColor.value +
+        '</td><td>'+ description.value +
+        '</td><td>'+ sizexs.value +
+        '</td><td>'+ sizes.value +
+        '</td><td>'+ sizem.value +
+        '</td><td>'+ sizel.value +
+        '</td><td>'+ sizexl.value +
+        '</td><td>'+ sizexxl.value +
+        
+        '</td><td>'+ totalRegPcs +
+        '</td><td>'+ '$ '+rPrice.value +
+        
+        '</td><td>'+ sizexxx.value +
+        '</td><td>'+ sizexxxx.value +
+        '</td><td>'+ sizexxxxx.value +
+        
+        '</td><td>'+ totalXPlusPcs +
+        '</td><td>'+ '$ '+xPrice.value +
+        '</td><td>'+ '$ '+totalAmount +
+        '</td></tr>');
 });
 
 
