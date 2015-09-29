@@ -1,6 +1,6 @@
-function isValidName(full_name) {
+function isValidName(storeName) {
     var pattern = new RegExp(/^[a-z ]{2,30}$/ig);
-    return pattern.test(full_name);
+    return pattern.test(storeName);
 }
 
 function isValidPhone(phone) {
@@ -10,14 +10,14 @@ function isValidPhone(phone) {
 
 function validateForm(theForm) {
     event.preventDefault();
-    var fName = theForm.full_name.value;
-    if (!isValidName (fName)){
-        Materialize.toast('Por favor escriba un nombre válido', 4000);
+    var sName = theForm.store-name.value;
+    if (!isValidName (sName)){
+        Materialize.toast('Please enter a valid store name', 4000);
     }
     
     var phoneNum = theForm.phone.value;
     if (!isValidPhone(phoneNum)) {
-        Materialize.toast('Por favor escriba un número de teléfono válido', 4000);
+        Materialize.toast('Please enter a valid phone number', 4000);
         return false;
     }
     console.log("validation successful"); 

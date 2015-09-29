@@ -15,7 +15,7 @@
     <body>
         <div class="container center">
             <div class="row">
-                <form action="email/contact_email" method="post"
+                <form action="email:3001/contact_email" method="post"
                 role="form" id="form" name="contactForm" onsubmit="return validateForm(document.contactForm);">
                     
                     <div class="container">
@@ -442,28 +442,28 @@
                     <table>
                                 <table>
                                     <thead>
+                                       
                                         <tr>
-                                            <tr>
-                                                <tr><img class="responsive-img" src="img/logo.png"/><br>
-                                                     <span>
-                                                        3100 NW 72nd Ave Suite 117, Miami FL, 33122<br> 
-                                                        Tel: 305-266-2900 &nbsp;
-                                                        Fax: 786-603-7999<br>
-                                                        tangomangousa@gmail.com
-                                                    </span>
-                                                </tr>
-
-                                                <th>
-                                                   
-                                                </th>
-                                                <th style="float: right;">
-                                                    <span id="order-number"></span><br><br>
-                                                    <span id="order-date"></span><br>
-                                                    <span id="ship-date"></span><br>
-                                                    <span id="cancel-date"></span>
-                                                </th>
+                                            <tr><img class="responsive-img" src="img/logo.png"/><br>
+                                                 <span>
+                                                    3100 NW 72nd Ave Suite 117, Miami FL, 33122<br> 
+                                                    Tel: 305-266-2900 &nbsp;
+                                                    Fax: 786-603-7999<br>
+                                                    tangomangousa@gmail.com
+                                                </span>
                                             </tr>
+
+                                            <th>
+
+                                            </th>
+                                            <th style="float: right;">
+                                                <span id="order-number"></span><br><br>
+                                                <span id="order-date"></span><br>
+                                                <span id="ship-date"></span><br>
+                                                <span id="cancel-date"></span>
+                                            </th>
                                         </tr>
+                                      
                                         
                                     </thead>
                                
@@ -604,6 +604,7 @@
             selectYears: 2,
             format: 'mmm/dd/yyyy'
         });</script>
-        <script type="text/javascript" src="js/orders.js"></script>    
+        <script type="text/javascript" src="js/orders.js"></script>
+        <script type="text/javascript" src="js/form-validation.js"></script>
     </body>
   </html>
