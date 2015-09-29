@@ -22,10 +22,10 @@ function validateForm(theForm) {
     }
     console.log("validation successful"); 
     
-    
+   
     $('#btn').addClass("hidden");
     $('#msg').removeClass("hidden");
-    $('#msg').html("Your Message is being sent...");
+    $('#msg').html("Your Order is being processed...");
     
     var form= $('#form'); 
     
@@ -34,7 +34,7 @@ function validateForm(theForm) {
         url: "http://www.swolebrain.com:4003/email",
         data: form.serialize(),
         success: function (response) {
-          $('#msg').html("Your Message has been sent");    
+          $('#msg').html("Thank you for your business");    
           console.log(response);    
         }
     });
