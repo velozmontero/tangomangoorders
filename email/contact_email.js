@@ -19,14 +19,14 @@ var transporter= nodemailer.createTransport({
 });
 
 var mailOptions= {
-    from: 'Party Reservation <fvm.productions04@gmail.com>',
-    subjects: 'Re: Party Reservation',
+    from: 'New Order <fvm.productions04@gmail.com>',
+    subjects: 'Re: New Order',
     to: 'velozmontero@gmail.com'
 }
 
 app.post('/email', function(req, res){
 
-    var emailBody= "New party reservation from: "+req.body.full_name;
+    var emailBody= "New Order from: "+req.body.store-name;
     emailBody += "<br>Phone: "+req.body.phone+"<br>Date: "+req.body.ddate+"<br>Time: "+req.body.hora+"<br>Email: "+req.body.email+
     "<br>Message: "+req.body.message;
     

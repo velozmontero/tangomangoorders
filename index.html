@@ -15,7 +15,7 @@
     <body>
         <div class="container center">
             <div class="row">
-                <form action="http://www.swolebrain.com:4003/email" method="post"
+                <form action="email/contact_email" method="post"
                 role="form" id="form" name="contactForm" onsubmit="return validateForm(document.contactForm);">
                     
                     <div class="container">
@@ -152,7 +152,7 @@
                                 <thead>
                                   <tr class="b-color">
                                       <th data-field="order-total-money" style="padding-right: 0px !important;">TOTAL PCS:</th>
-                                      <th id="tpcs" money="tpcs"data-field="pcs" style="padding-right: 0px !important;"></th>
+                                      <th id="tpcs" name="tpcs" data-field="pcs" style="padding-right: 0px !important;"></th>
                                       <th data-field="order-total-pcs" style="padding-right: 0px !important;">AMOUNT:</th>
                                       <th id="tmoney" name="tmoney" data-field="money" style="padding-right: 0px !important;"></th>
                                   </tr>
