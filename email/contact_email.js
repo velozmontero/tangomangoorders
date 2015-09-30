@@ -10,6 +10,11 @@ var bodyParser= require('body-parser');
 var app= express();
 app.use(bodyParser.urlencoded({extended: true}))
 
+app.use(function(req,res,next){
+    res.header("Access-Control-Allow-Origin", "*");
+    next();
+});
+
 var transporter= nodemailer.createTransport({
     service: 'gmail',
     auth:{
@@ -20,15 +25,13 @@ var transporter= nodemailer.createTransport({
 
 var mailOptions= {
     from: 'New Order <fvm.productions04@gmail.com>',
-    subjects: 'Re: New Order',
+    subject: 'Re: New Order',
     to: 'velozmontero@gmail.com'
 }
 
 app.post('/email', function(req, res){
 
-    var emailBody= "New Order from: "+req.body.store-name;
-    emailBody += "<br>Phone: "+req.body.phone+"<br>Date: "+req.body.ddate+"<br>Time: "+req.body.hora+"<br>Email: "+req.body.email+
-    "<br>Message: "+req.body.message;
+    var emailBody= req.body.htmltable;
     
     mailOptions.html= emailBody;
     transporter.sendMail(mailOptions, function(error,info){
