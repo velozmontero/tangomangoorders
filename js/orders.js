@@ -235,10 +235,12 @@ $('#add-style').on('click', function(){
 //order overview start //--------------------
 
 $('#add-style').on('click', function(){
-    $('#order-ow-tbody').html($("#table-body").html());
-    
+    $('#order-ow-tbody').html($("#table-body").html());  
 });
 //order overview start //--------------------/
+
+
+
 
 $('#clear-style').on('click', function(){
     $("#order-style").val("").trigger( "focusout" );
