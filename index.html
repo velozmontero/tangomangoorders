@@ -444,8 +444,8 @@
                     
     
                     <div id="main-email-body">
-                    <table>
-                                <table>
+                    <table style="width: 100%;">
+                                <table style="width: 100%;">
                                     <thead>
                                        
 
@@ -458,64 +458,59 @@
                                                 tangomangousa@gmail.com
                                             </span>
                                         </tr>
-                                        
                                         <tr>
                                             <th>
 
                                             </th>
                                         
                                             <th style="float: right;">
-                                                <span id="order-number"></span><br><br>
-                                                <span id="order-date"></span><br>
-                                                <span id="ship-date"></span><br>
-                                                <span id="cancel-date"></span>
+                                                <p style="text-align: right;">
+                                                    <span id="order-number"></span><br><br>
+                                                    <span id="order-date"></span><br>
+                                                    <span id="ship-date"></span><br>
+                                                    <span id="cancel-date"></span>
+                                                </p>
+                                            </th>
+                                        </tr>
+                                    
+                                        
+                                        <tr>
+
+                                            <th style="border: 2px solid;  width: 50%;">
+                                                <p style="text-align: left; padding-left: 20px; padding-right: 20px;">
+                                                    <span>Sold to:</span><br><br>
+                                                    <span id="sold-to-store-name" name="sold-to-store-name"></span><br>  
+                                                    <span id="sold-to-address" name="sold-to-address"></span><br> 
+                                                    <span id="sold-to-city" name="sold-to-city"></span>
+                                                    <span id="sold-to-state" name="sold-to-state"></span>
+                                                    <span id="sold-to-zip_code" name="sold-to-zip_code"></span><br><br>
+                                                    <span id="sold-to-phone" name="sold-to-phone"></span><br>
+                                                    <span id="sold-to-email" name="sold-to-email"></span><br>
+                                                    <span><!--space to make it visualy even--></span><br>
+                                                </p>
+                                            </th>
+
+                                            <th style="border: 2px solid; width: 50%;">
+                                                <p style="text-align: left; padding-left: 20px; padding-right: 20px;">
+                                                    <span>Ship to:</span><br><br>
+                                                    <span id="ship-to-store-name" name="ship-to-store-name"></span><br>
+                                                    <span id="ship-to-address" name="ship-to-address"></span><br> 
+                                                    <span id="ship-to-city" name="ship-to-city"></span>
+                                                    <span id="ship-to-state" name="ship-to-state"></span>
+                                                    <span id="ship-to-zip_code" name="ship-to-zip_code"></span><br><br>
+
+                                                    <span>Special Instructions:</span><br>
+                                                    <span id="ship-to-instr" name="ship-to-instr"></span>
+                                                    <span><!--space to make it visualy even--></span><br><br>
+                                                </p>    
                                             </th>
                                         </tr>
                                       
-                                        
-                                    </thead>
-                               
-                                
-                                
-                                    <thead>
-                                        <tr>
-                                            <tr>
-                                                
-                                                <th style="border: 2px solid;  width: 50%;">
-                                                    <p>
-                                                        <span>Sold to:</span><br><br>
-                                                        <span id="sold-to-store-name" name="sold-to-store-name"></span><br>  
-                                                        <span id="sold-to-address" name="sold-to-address"></span><br> 
-                                                        <span id="sold-to-city" name="sold-to-city"></span>
-                                                        <span id="sold-to-state" name="sold-to-state"></span>
-                                                        <span id="sold-to-zip_code" name="sold-to-zip_code"></span><br><br>
-                                                        <span id="sold-to-phone" name="sold-to-phone"></span><br>
-                                                        <span id="sold-to-email" name="sold-to-email"></span><br>
-                                                        <span><!--space to make it visualy even--></span><br>
-                                                    </p>
-                                                </th>
-                                                 
-                                                <th style="border: 2px solid; width: 50%;">
-                                                    <p>
-                                                        <span>Ship to:</span><br><br>
-                                                        <span id="ship-to-store-name" name="ship-to-store-name"></span><br>
-                                                        <span id="ship-to-address" name="ship-to-address"></span><br> 
-                                                        <span id="ship-to-city" name="ship-to-city"></span>
-                                                        <span id="ship-to-state" name="ship-to-state"></span>
-                                                        <span id="ship-to-zip_code" name="ship-to-zip_code"></span><br><br>
-
-                                                        <span>Special Instructions:</span><br>
-                                                        <span id="ship-to-instr" name="ship-to-instr"></span>
-                                                        <span><!--space to make it visualy even--></span><br><br>
-                                                    </p>    
-                                                </th>
-                                            </tr>
-                                        </tr>
                                         <tr><th><!--Spacer--></th><th><!--Spacer--></th></tr>
                                     </thead>
                                 </table>
             
-                                <table>
+                                <table style="width: 100%;">
                                     <thead>
                                         <tr>
                                             <th style="border: 2px solid; width: 25%;">
@@ -538,7 +533,7 @@
                                     </thead>
                                 </table>
                                 
-                                <table class="striped centered" id="order" name="order">
+                                <table class="striped centered" id="order" name="order" style="width: 100%;">
                                     <thead>
                                       <tr>
                                           <th data-field="style" style="padding-right: 0px !important;">STYLE</th>
@@ -566,12 +561,12 @@
 
                                     </thead>
 
-                                    <tbody>
+                                    <tbody style="text-align: center;">
 
                                     </tbody>
                                 </table>
 
-                                <table class="striped centered" id="order-ow" name="order-ow">
+                                <table style="width: 100%;" class="striped centered" id="order-ow" name="order-ow">
                                     <thead>
                                         <tr class="b-color">
                                             <th data-field="order-total-money" style="padding-right: 0px !important;">TOTAL PCS:</th>
@@ -585,7 +580,7 @@
                                 <tbody>
 
                                 </tbody>
-                                </table>    
+                            </table>    
                             
                         </table>
             </div>
