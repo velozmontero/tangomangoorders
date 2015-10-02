@@ -42,6 +42,10 @@
     background-color: #ffff8d;
 } 
 
+.selected {
+    background-color: #95B6D3 !important;
+} 
+
 .hidden {
     display: none;
 }

@@ -169,7 +169,7 @@ $('#add-style').on('click', function(){
     
     //push info to global array end//------------------------/
     
-    $('#order').find('tbody:last-child').append(
+    $('#order-ow').find('tbody:last-child').append(
         '<tr><td>'+ orderStyle.value +
         '</td><td>'+ styleColor.value +
         
@@ -195,6 +195,7 @@ $('#add-style').on('click', function(){
         '</td></tr>');
 });
 
+  
 
 //Total values start//------------------
 
@@ -235,7 +236,7 @@ $('#add-style').on('click', function(){
 //order overview start //--------------------
 
 $('#add-style').on('click', function(){
-    $('#order-ow-tbody').html($("#table-body").html());  
+    $('#table-body').html($("#order-ow-tbody").html());  
 });
 //order overview start //--------------------/
 
@@ -393,4 +394,20 @@ $('#terms').change(function(){
 });
 
 
-
+ $(document).ready(function() {
+    var table = document.getElementById("order");
+ 
+    $('#order-ow tbody').on( 'click', 'tr', function () {
+        if ($(this).hasClass('selected') ) {
+            $(this).removeClass('selected');
+        }
+        else {
+            $('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+    } );
+ 
+    $('#button').click( function () {
+        table.row('.selected').remove().draw( false );
+    } );
+} ); 
