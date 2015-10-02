@@ -229,26 +229,16 @@ $('#add-style').on('click', function(){
     orderGlobalMoney.innerHTML = "$ "+orderTotalMoney.toFixed(2);
 });
 
-//Total values end//------------------/
+//Total values end //------------------/
 
+
+//order overview start //--------------------
 
 $('#add-style').on('click', function(){
+    $('#order-ow-tbody').html($("#table-body").html());
     
-    $('#order-ow').find('tbody:last-child').append(
-        '<tr><td>'+ orderStyle.value +
-        '</td><td>'+ styleColor.value +
-        '</td><td>'+ sizexs.value +
-        '</td><td>'+ sizes.value +
-        '</td><td>'+ sizem.value +
-        '</td><td>'+ sizel.value +
-        '</td><td>'+ sizexl.value +
-        '</td><td>'+ sizexxl.value +
-        '</td><td>'+ sizexxx.value +
-        '</td><td>'+ sizexxxx.value +
-        '</td><td>'+ sizexxxxx.value +
-        '</td></tr>');
 });
-
+//order overview start //--------------------/
 
 $('#clear-style').on('click', function(){
     $("#order-style").val("").trigger( "focusout" );
