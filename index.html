@@ -27,11 +27,11 @@
                             <div class="col s12">
                                 <div class="col s12 m12 l4">
                                     <div class="input-field col s6">
-                                       <input type="text" id="order-style" name="order-style" class="center validate" required>
+                                       <input type="text" id="order-style" name="order-style" class="center validate">
                                        <label for="order-style">STYLE</label>
                                     </div>
                                     <div class="input-field col s6">
-                                       <input type="text" id="order-color" name="order-color" class="center validate" required>
+                                       <input type="text" id="order-color" name="order-color" class="center validate">
                                        <label for="order-color">COLOR</label>
                                     </div>
                                 </div>
@@ -143,16 +143,17 @@
                                           <th data-field="xxl">XXL</th>
                                           
                                           <th data-field="qtyr" class="hide-on-med-and-down">Qty</th>
-                                          <th data-field="pricer" class="hide-on-med-and-down">Price</th>
+                                          <th data-field="pricer" class="hide-on-med-and-down">PRICE</th>
                                           
                                           <th data-field="1x">1X</th>
                                           <th data-field="2x">2X</th>
                                           <th data-field="3x">3X</th>
                                           
                                           <th data-field="qtyx" class="hide-on-med-and-down">Qty</th>
-                                          <th data-field="pricex" class="hide-on-med-and-down">Price</th>
+                                          <th data-field="pricex" class="hide-on-med-and-down">PRICE</th>
                                           
-                                          <th data-field="3x" class="hide-on-med-and-down">Total</th>
+                                          <th data-field="3x" class="hide-on-med-and-down">TOTAL</th>
+                                          <th data-field="3x" class="hide-on-med-and-down">AMOUNT</th>
                                       </tr>
                                     </thead>
 
@@ -161,21 +162,18 @@
                                 </tbody>
                               </table>
                             
-                               <table class="striped centered" id="order-ow" name="order-ow">
-                                <thead>
-                                  <tr class="b-color">
-                                      <th data-field="order-total-money" style="padding-right: 0px !important;">TOTAL PCS:</th>
-                                      <th id="tpcs" name="tpcs" data-field="pcs" style="padding-right: 0px !important;"></th>
-                                      <th data-field="order-total-pcs" style="padding-right: 0px !important;">AMOUNT:</th>
-                                      <th id="tmoney" name="tmoney" data-field="money" style="padding-right: 0px !important;"></th>
-                                  </tr>
-                                    
-                                </thead>
+                            <table style="width: 100%; padding-top: 10px;" class="striped centered">
+                                <thead style="width: 100%;">
+                                    <tr style="width: 100%; background-color: #ccff90;">
+                                        <th data-field="order-total-money" style="padding-right: 0px !important; padding-top: 15px; padding-bottom: 15px;">TOTAL PCS:</th>
+                                        <th id="tpcs" name="tpcs" data-field="pcs" style="padding-right: 0px !important;  padding-top: 15px; padding-bottom: 15px;"></th>
+                                        <th data-field="order-total-pcs" style="padding-right: 0px !important; padding-top: 15px; padding-bottom: 15px;">FULL AMOUNT:</th>
+                                        <th id="tmoney" name="tmoney" data-field="money" style="padding-right: 0px !important;  padding-top: 15px; padding-bottom: 15px;"></th>
+                                    </tr>
 
-                                <tbody>
-                                  
-                                </tbody>
-                              </table>    
+                                </thead>
+                            </table>
+                                   
                         </div>
                     </div>
                     
@@ -557,16 +555,17 @@
                                           <th data-field="xxl">XXL</th>
                                           
                                           <th data-field="qtyr" class="hide-on-med-and-down">Qty</th>
-                                          <th data-field="pricer" class="hide-on-med-and-down">Price</th>
+                                          <th data-field="pricer" class="hide-on-med-and-down">PRICE</th>
                                           
                                           <th data-field="1x">1X</th>
                                           <th data-field="2x">2X</th>
                                           <th data-field="3x">3X</th>
                                           
                                           <th data-field="qtyx" class="hide-on-med-and-down">Qty</th>
-                                          <th data-field="pricex" class="hide-on-med-and-down">Price</th>
+                                          <th data-field="pricex" class="hide-on-med-and-down">PRICE</th>
                                           
-                                          <th data-field="3x" class="hide-on-med-and-down">Total</th>
+                                          <th data-field="3x" class="hide-on-med-and-down">TOTAL</th>
+                                          <th data-field="3x" class="hide-on-med-and-down">AMOUNT</th>
                                       </tr>
 
                                     </thead>
@@ -576,20 +575,16 @@
                                     </tbody>
                                 </table>
 
-                                <table style="width: 100%; padding-top: 10px;" class="striped centered" id="order-ow" name="order-ow">
+                                <table style="width: 100%; padding-top: 10px;" class="striped centered">
                                     <thead style="width: 100%;">
                                         <tr style="width: 100%; background-color: #ccff90;">
                                             <th data-field="order-total-money" style="padding-right: 0px !important; padding-top: 15px; padding-bottom: 15px;">TOTAL PCS:</th>
-                                            <th id="tpcs-1" name="tpcs" data-field="pcs" style="padding-right: 0px !important;  padding-top: 15px; padding-bottom: 15px;"></th>
-                                            <th data-field="order-total-pcs" style="padding-right: 0px !important; padding-top: 15px; padding-bottom: 15px;">AMOUNT:</th>
+                                            <th id="tpcs-1" name="tpcs-1" data-field="pcs" style="padding-right: 0px !important;  padding-top: 15px; padding-bottom: 15px;"></th>
+                                            <th data-field="order-total-pcs" style="padding-right: 0px !important; padding-top: 15px; padding-bottom: 15px;">FULL AMOUNT:</th>
                                             <th id="tmoney-1" name="tmoney-1" data-field="money" style="padding-right: 0px !important;  padding-top: 15px; padding-bottom: 15px;"></th>
                                         </tr>
 
                                     </thead>
-
-                                    <tbody style="width: 100%;">
-
-                                    </tbody>
                                 </table>    
                             
                         </table> 

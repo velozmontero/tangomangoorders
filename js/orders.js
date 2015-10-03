@@ -191,8 +191,11 @@ $('#add-style').on('click', function(){
         
         '</td><td class="hide-on-med-and-down">'+ totalXPlusPcs +
         '</td><td class="hide-on-med-and-down">'+ '$ '+xPrice.value +
-        '</td><td class="hide-on-med-and-down">'+ '$ '+totalAmount +
-        '</td></tr>');
+        
+        '</td><td class="hide-on-med-and-down style-total-pcs">'+ addRandP +
+        '</td><td class="hide-on-med-and-down style-total-amount">'+ '$ '+totalAmount +
+        
+        '</td><td class="xxx hidden" >X</td></tr>');
 });
 
   
@@ -224,10 +227,10 @@ $('#add-style').on('click', function(){
     
     
     var orderGlobalPcs = document.getElementById("tpcs-1");
-    orderGlobalPcs.innerHTML = orderTotalPcs;
+    orderGlobalPcs.innerHTML = globalPcs.innerHTML;
     
     var orderGlobalMoney= document.getElementById("tmoney-1");
-    orderGlobalMoney.innerHTML = "$ "+orderTotalMoney.toFixed(2);
+    orderGlobalMoney.innerHTML = globalmoney.innerHTML;
 });
 
 //Total values end //------------------/
@@ -398,16 +401,27 @@ $('#terms').change(function(){
     var table = document.getElementById("order");
  
     $('#order-ow tbody').on( 'click', 'tr', function () {
-        if ($(this).hasClass('selected') ) {
+        if ($(this).hasClass('selected')) {
+            $(this).find('.xxx').addClass('hidden');
             $(this).removeClass('selected');
         }
         else {
             $('tr.selected').removeClass('selected');
+            $('td.xxx').addClass('hidden');
             $(this).addClass('selected');
+            $(this).find('.xxx').removeClass('hidden');
+            
+            $('.xxx').click( function () {
+                
+                var orderGlobalPcs = $("#tpcs").html();
+                orderGlobalPcs-= $('tr.selected, td.style-total-pcs').html();
+                
+                $('tr.selected').remove();
+                
+                $('#table-body').html($("#order-ow-tbody").html());  
+            });
         }
-    } );
+    });
  
-    $('#button').click( function () {
-        table.row('.selected').remove().draw( false );
-    } );
+    
 } ); 

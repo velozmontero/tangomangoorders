@@ -51,8 +51,6 @@
 }
 
 
-
-
 @media only screen and (max-width: 400px){
     h5 {
         font-size: 15px;
@@ -70,3 +68,35 @@
 @media only screen and (min-width: 1080px){
     
 }
+
+
+.xxx {
+  background-color:white;
+	-moz-border-radius:42px;
+	-webkit-border-radius:42px;
+	border-radius:42px;
+	border:1px solid #f25353;
+	cursor:pointer;
+	color:#db3333;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 3px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+
+.xxx:hover {
+  background: #d64545;
+  background-image: -webkit-linear-gradient(top, #d64545, #cf5353);
+  background-image: -moz-linear-gradient(top, #d64545, #cf5353);
+  background-image: -ms-linear-gradient(top, #d64545, #cf5353);
+  background-image: -o-linear-gradient(top, #d64545, #cf5353);
+  background-image: linear-gradient(to bottom, #d64545, #cf5353);
+  color: white;
+}
+
+
+
+
+	
+

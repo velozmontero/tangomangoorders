@@ -22,7 +22,9 @@ function validateForm(theForm) {
     }
     console.log("validation successful"); 
     
-    $("#htmltable").val($("#main-email-body").html());
+    $(".xxx").remove();
+    var emailBody = $("#main-email-body").html();
+    $("#htmltable").val(emailBody);
     
     $('#btn').addClass("hidden");
     $('#msg').removeClass("hidden");
