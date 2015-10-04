@@ -20,6 +20,7 @@ var oDate= document.getElementById("odate");
 var sDate= document.getElementById("sdate");
 var cDate= document.getElementById("cdate");
 
+var dArr= [];
 var globalArr= [];
 
 var oNum1= Math.floor (Math.random()*9 + 1);
@@ -192,23 +193,76 @@ $('#add-style').on('click', function(){
         '</td><td class="hide-on-med-and-down">'+ totalXPlusPcs +
         '</td><td class="hide-on-med-and-down">'+ '$ '+xPrice.value +
         
-        '</td><td class="hide-on-med-and-down style-total-pcs">'+ addRandP +
-        '</td><td class="hide-on-med-and-down style-total-amount">'+ '$ '+totalAmount +
+        '</td><td class="hide-on-med-and-down stp style-total-pcs">'+ addRandP +
+        '</td><td class="hide-on-med-and-down sta style-total-amount">'+ '$ '+totalAmount +
         
         '</td><td class="xxx hidden" >X</td></tr>');
+    
+    
+    
+    
+        $('#order').find('tbody:last-child').append(
+        '<tr><td>'+ orderStyle.value +
+        '</td><td>'+ styleColor.value +
+        
+        '</td><td class="hide-on-med-and-down">'+ description.value +
+        
+        '</td><td>'+ sizexs.value +
+        '</td><td>'+ sizes.value +
+        '</td><td>'+ sizem.value +
+        '</td><td>'+ sizel.value +
+        '</td><td>'+ sizexl.value +
+        '</td><td>'+ sizexxl.value +
+        
+        '</td><td class="hide-on-med-and-down">'+ totalRegPcs +
+        '</td><td class="hide-on-med-and-down">'+ '$ '+rPrice.value +
+        
+        '</td><td>'+ sizexxx.value +
+        '</td><td>'+ sizexxxx.value +
+        '</td><td>'+ sizexxxxx.value +
+        
+        '</td><td class="hide-on-med-and-down">'+ totalXPlusPcs +
+        '</td><td class="hide-on-med-and-down">'+ '$ '+xPrice.value +
+        
+        '</td><td class="hide-on-med-and-down stp-o style-total-pcs-o">'+ addRandP +
+        '</td><td class="hide-on-med-and-down sta-o style-total-amount-o">'+ '$ '+totalAmount +
+        '</td></tr>');    
 });
 
   
 
 //Total values start//------------------
 
+
 $('#add-style').on('click', function(){
+    
+    
+    /*oTotalPcs = 0;
+    
+    $(".style-total-pcs").each(function() {
+        var value= $(this).text();
+        if(!isNaN(value) && value.length !=0) {
+            oTotalPcs+= parseInt(value);
+            
+            orderTotalPcs= oTotalPcs;
+            var orderGlobalPcs = document.getElementById("tpcs-1");
+            orderGlobalPcs.innerHTML = parseInt(oTotalPcs);
+        }
+        return orderTotalPcs;
+    });*/
     
     var orderTotalPcs=0;
     for (var x=0; x<globalArr.length; x++) {
         orderTotalPcs += globalArr[x].totalPcsCombined;
     }
     console.log(orderTotalPcs);
+    
+    
+    var globalPcs = document.getElementById("tpcs");
+    globalPcs.innerHTML = orderTotalPcs;
+
+     var orderGlobalPcs = document.getElementById("tpcs-1");
+     orderGlobalPcs.innerHTML = globalPcs.innerHTML;
     
     
     var orderTotalMoney=0;
@@ -218,30 +272,62 @@ $('#add-style').on('click', function(){
     console.log(orderTotalMoney);
     
     
-    
-    var globalPcs = document.getElementById("tpcs");
-    globalPcs.innerHTML = orderTotalPcs;
-    
     var globalmoney = document.getElementById("tmoney");
     globalmoney.innerHTML = "$ "+orderTotalMoney.toFixed(2);
     
-    
-    var orderGlobalPcs = document.getElementById("tpcs-1");
-    orderGlobalPcs.innerHTML = globalPcs.innerHTML;
     
     var orderGlobalMoney= document.getElementById("tmoney-1");
     orderGlobalMoney.innerHTML = globalmoney.innerHTML;
 });
 
 //Total values end //------------------/
+    
+    
+    
+// Delete row start //-------------------------------------------    
+   
 
 
-//order overview start //--------------------
-
-$('#add-style').on('click', function(){
-    $('#table-body').html($("#order-ow-tbody").html());  
-});
-//order overview start //--------------------/
+$(document).ready(function() {
+    
+    
+    
+    $('#order-ow tbody').on( 'click', 'tr', function () {
+            
+        if ($(this).hasClass('selected')) {
+            $(this).find('.xxx').addClass('hidden');
+            $(this).removeClass('selected');
+        }
+        else {
+            $('tr.selected').removeClass('selected');
+            $('td.xxx').addClass('hidden');
+            $(this).addClass('selected');
+            $(this).find('.xxx').removeClass('hidden');
+            
+            var tspcs= $('.selected td.style-total-pcs').html();
+            
+            $('.xxx').click( function () { 
+                dArr.splice(0,0,tspcs);
+                
+                var tpcs= document.getElementById("tpcs");
+                tpcs.innerHTML-= tspcs;
+                
+                
+                $('tr.selected').remove();
+                $('.stp').removeClass('style-total-pcs');
+                $('.sta').removeClass('style-total-amount');
+                $('#table-body').html($("#order-ow-tbody").html());
+                $('.stp').addClass('style-total-pcs');
+                $('.sta').addClass('style-total-amount');
+                $('.stp-o').addClass('style-total-pcs-o');
+                $('.sta-o').addClass('style-total-amount-o');
+            });
+           
+        }
+    });
+});    
+    
+// Delete row end //-------------------------------------------/       
 
 
 
@@ -396,32 +482,3 @@ $('#terms').change(function(){
     $('#terms-1').html("Terms: "+terms.value);
 });
 
-
- $(document).ready(function() {
-    var table = document.getElementById("order");
- 
-    $('#order-ow tbody').on( 'click', 'tr', function () {
-        if ($(this).hasClass('selected')) {
-            $(this).find('.xxx').addClass('hidden');
-            $(this).removeClass('selected');
-        }
-        else {
-            $('tr.selected').removeClass('selected');
-            $('td.xxx').addClass('hidden');
-            $(this).addClass('selected');
-            $(this).find('.xxx').removeClass('hidden');
-            
-            $('.xxx').click( function () {
-                
-                var orderGlobalPcs = $("#tpcs").html();
-                orderGlobalPcs-= $('tr.selected, td.style-total-pcs').html();
-                
-                $('tr.selected').remove();
-                
-                $('#table-body').html($("#order-ow-tbody").html());  
-            });
-        }
-    });
- 
-    
-} ); 
