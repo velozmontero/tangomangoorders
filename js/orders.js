@@ -20,6 +20,7 @@ var oDate= document.getElementById("odate");
 var sDate= document.getElementById("sdate");
 var cDate= document.getElementById("cdate");
 
+var totalArr= [0];
 var globalArr= [];
 
 var oNum1= Math.floor (Math.random()*9 + 1);
@@ -228,11 +229,11 @@ $('#add-style').on('click', function(){
         '</td></tr>');    
 });
 
-  
+
 
 //Total values start//------------------
 
-function calculatePcs(){
+/*function calculatePcs(){
     
     oTotalPcs = 0;
     
@@ -246,33 +247,36 @@ function calculatePcs(){
 
             var orderGlobalPcs = document.getElementById("tpcs-1");
             orderGlobalPcs.innerHTML = parseInt(oTotalPcs);
+            
+            totalArr.push(oTotalPcs);
             }
+        
         return oTotalPcs;
     });
-}
+}*/
+
+function calculatePcs(){
+    var oTotalPcs=0;
+    var diff=0;
+    for (var x=0; x<globalArr.length; x++) {
+        oTotalPcs += globalArr[x].totalPcsCombined;
+    }
+    
+    return oTotalPcs;
+    console.log(oTotalPcs);
+};
 
 $('#add-style').on('click', function(){
     
+    totalArr.push(calculatePcs());
     calculatePcs();
     
-    /*function calculatePcs(){
-        var orderTotalPcs=0;
-        for (var x=0; x<globalArr.length; x++) {
-            orderTotalPcs += globalArr[x].totalPcsCombined;
-        }
-        return orderTotalPcs;
-        console.log(orderTotalPcs);
-    };
-   
     var globalPcs = document.getElementById("tpcs");
     globalPcs.innerHTML = calculatePcs();
 
-     var orderGlobalPcs = document.getElementById("tpcs-1");
-     orderGlobalPcs.innerHTML = globalPcs.innerHTML;*/
-    
-    
-    
-    
+    var orderGlobalPcs = document.getElementById("tpcs-1");
+    orderGlobalPcs.innerHTML = globalPcs.innerHTML;
+ 
     var orderTotalMoney=0;
     for (var x=0; x<globalArr.length; x++) {
         orderTotalMoney += globalArr[x].TotalPriceCombined;
@@ -286,14 +290,15 @@ $('#add-style').on('click', function(){
     
     var orderGlobalMoney= document.getElementById("tmoney-1");
     orderGlobalMoney.innerHTML = globalmoney.innerHTML;
+    
+    
 });
 
-//Total values end //------------------/
-    
-    
-    
-// Delete row start //------------------------------------------------------------------------------------------------------------------------    
+//Total values end //------------------/    
 
+
+
+// Delete row start //------------------------------------------------------------------------------------------------------------------------    
 
 $(document).ready(function() {
     $('#order-ow tbody').on( 'click', 'tr', function () {
@@ -306,31 +311,33 @@ $(document).ready(function() {
             $('tr.selected').removeClass('selected');
             $('td.xxx').addClass('hidden');
             $(this).addClass('selected');
-            $(this).find('.xxx').removeClass('hidden'); 
+            $(this).find('.xxx').removeClass('hidden');
+            
+            $('table#order-ow tr.selected td.xxx').on('click', function () { 
+                
+                var result= totalArr[totalArr.length-1]-$('.selected td.style-total-pcs').html();
+                
+                $('#tpcs').html(result);
+                $('#tpcs-1').html(result);
+                console.log("this is the number "+ result);
+                totalArr.push(result);
+                
+                $('.selected').remove();
+                
+                $('.stp').removeClass('style-total-pcs');
+                $('.sta').removeClass('style-total-amount');
+                $('#table-body').html($("#order-ow-tbody").html());
+                $('.stp').addClass('style-total-pcs');
+                $('.sta').addClass('style-total-amount');
+                $('.stp-o').addClass('style-total-pcs-o');
+                $('.sta-o').addClass('style-total-amount-o');
+                
+            });
         }
     });
+});     
     
-    $('table#order-ow tr.selected td.xxx').on('click', function () { 
-        
-        $('.selected').remove();
-
-        var tspcs= $('.selected td.style-total-pcs').html();
-
-        $('.stp').removeClass('style-total-pcs');
-        $('.sta').removeClass('style-total-amount');
-        $('#table-body').html($("#order-ow-tbody").html());
-        $('.stp').addClass('style-total-pcs');
-        $('.sta').addClass('style-total-amount');
-        $('.stp-o').addClass('style-total-pcs-o');
-        $('.sta-o').addClass('style-total-amount-o');
-
-        calculatePcs();    
-    });
-    
-});    
-    
-// Delete row end //-------------------------------------------/       
-
+// Delete row end //-------------------------------------------/   
 
 
 
