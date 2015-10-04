@@ -20,7 +20,6 @@ var oDate= document.getElementById("odate");
 var sDate= document.getElementById("sdate");
 var cDate= document.getElementById("cdate");
 
-var dArr= [];
 var globalArr= [];
 
 var oNum1= Math.floor (Math.random()*9 + 1);
@@ -233,36 +232,45 @@ $('#add-style').on('click', function(){
 
 //Total values start//------------------
 
-
-$('#add-style').on('click', function(){
+function calculatePcs(){
     
-    
-    /*oTotalPcs = 0;
+    oTotalPcs = 0;
     
     $(".style-total-pcs").each(function() {
         var value= $(this).text();
         if(!isNaN(value) && value.length !=0) {
             oTotalPcs+= parseInt(value);
-            
-            orderTotalPcs= oTotalPcs;
+
+            var globalPcs = document.getElementById("tpcs");
+            globalPcs.innerHTML = parseInt(oTotalPcs);
+
             var orderGlobalPcs = document.getElementById("tpcs-1");
             orderGlobalPcs.innerHTML = parseInt(oTotalPcs);
+            }
+        return oTotalPcs;
+    });
+}
+
+$('#add-style').on('click', function(){
+    
+    calculatePcs();
+    
+    /*function calculatePcs(){
+        var orderTotalPcs=0;
+        for (var x=0; x<globalArr.length; x++) {
+            orderTotalPcs += globalArr[x].totalPcsCombined;
         }
         return orderTotalPcs;
-    });*/
-    
-    var orderTotalPcs=0;
-    for (var x=0; x<globalArr.length; x++) {
-        orderTotalPcs += globalArr[x].totalPcsCombined;
-    }
-    console.log(orderTotalPcs);
-    
-    
+        console.log(orderTotalPcs);
+    };
+   
     var globalPcs = document.getElementById("tpcs");
-    globalPcs.innerHTML = orderTotalPcs;
+    globalPcs.innerHTML = calculatePcs();
 
      var orderGlobalPcs = document.getElementById("tpcs-1");
-     orderGlobalPcs.innerHTML = globalPcs.innerHTML;
+     orderGlobalPcs.innerHTML = globalPcs.innerHTML;*/
+    
+    
     
     
     var orderTotalMoney=0;
@@ -284,14 +292,10 @@ $('#add-style').on('click', function(){
     
     
     
-// Delete row start //-------------------------------------------    
-   
+// Delete row start //------------------------------------------------------------------------------------------------------------------------    
 
 
 $(document).ready(function() {
-    
-    
-    
     $('#order-ow tbody').on( 'click', 'tr', function () {
             
         if ($(this).hasClass('selected')) {
@@ -302,29 +306,27 @@ $(document).ready(function() {
             $('tr.selected').removeClass('selected');
             $('td.xxx').addClass('hidden');
             $(this).addClass('selected');
-            $(this).find('.xxx').removeClass('hidden');
-            
-            var tspcs= $('.selected td.style-total-pcs').html();
-            
-            $('.xxx').click( function () { 
-                dArr.splice(0,0,tspcs);
-                
-                var tpcs= document.getElementById("tpcs");
-                tpcs.innerHTML-= tspcs;
-                
-                
-                $('tr.selected').remove();
-                $('.stp').removeClass('style-total-pcs');
-                $('.sta').removeClass('style-total-amount');
-                $('#table-body').html($("#order-ow-tbody").html());
-                $('.stp').addClass('style-total-pcs');
-                $('.sta').addClass('style-total-amount');
-                $('.stp-o').addClass('style-total-pcs-o');
-                $('.sta-o').addClass('style-total-amount-o');
-            });
-           
+            $(this).find('.xxx').removeClass('hidden'); 
         }
     });
+    
+    $('table#order-ow tr.selected td.xxx').on('click', function () { 
+        
+        $('.selected').remove();
+
+        var tspcs= $('.selected td.style-total-pcs').html();
+
+        $('.stp').removeClass('style-total-pcs');
+        $('.sta').removeClass('style-total-amount');
+        $('#table-body').html($("#order-ow-tbody").html());
+        $('.stp').addClass('style-total-pcs');
+        $('.sta').addClass('style-total-amount');
+        $('.stp-o').addClass('style-total-pcs-o');
+        $('.sta-o').addClass('style-total-amount-o');
+
+        calculatePcs();    
+    });
+    
 });    
     
 // Delete row end //-------------------------------------------/       
