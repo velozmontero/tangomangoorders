@@ -255,14 +255,15 @@ $('#add-style').on('click', function(){
     });
 }*/
 
+totalArr.push(0);
 function calculatePcs(){
-    var oTotalPcs=0;
+    //var oTotalPcs=0;
     for (var x=0; x<globalArr.length; x++) {
-        oTotalPcs += globalArr[x].totalPcsCombined;
+        totalArr[totalArr.length-1] += globalArr[x].totalPcsCombined;
     }
     
-    return oTotalPcs;
-    console.log(oTotalPcs);
+    return totalArr[totalArr.length-1];
+    console.log(totalArr[totalArr.length-1]);
 };
 
 $('#add-style').on('click', function(){
