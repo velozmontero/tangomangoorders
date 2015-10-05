@@ -20,6 +20,7 @@ var oDate= document.getElementById("odate");
 var sDate= document.getElementById("sdate");
 var cDate= document.getElementById("cdate");
 
+var totalMoneyArr= [];
 var totalArr= [];
 var globalArr= [];
 
@@ -274,21 +275,19 @@ $('#add-style').on('click', function(){
  
     
     
-    var orderTotalMoney=0;
+    totalMoneyArr[totalMoneyArr-1]=0;
     for (var x=0; x<globalArr.length; x++) {
-        orderTotalMoney += globalArr[x].TotalPriceCombined;
+        totalMoneyArr[totalMoneyArr-1] += globalArr[x].TotalPriceCombined;
     }
-    console.log(orderTotalMoney);
+    console.log(totalMoneyArr[totalMoneyArr-1]);
     
     
     var globalmoney = document.getElementById("tmoney");
-    globalmoney.innerHTML = "$ "+orderTotalMoney.toFixed(2);
+    globalmoney.innerHTML = "$ "+totalMoneyArr[totalMoneyArr-1].toFixed(2);
     
     
     var orderGlobalMoney= document.getElementById("tmoney-1");
-    orderGlobalMoney.innerHTML = globalmoney.innerHTML;
-    
-    
+    orderGlobalMoney.innerHTML = globalmoney.innerHTML; 
 });
 
 //Total values end //------------------/    
@@ -312,12 +311,20 @@ $(document).ready(function() {
             
             $('table#order-ow tr.selected td.xxx').on('click', function () { 
                 
-                var result= totalArr[totalArr.length-1]-$('.selected td.style-total-pcs').html();
+                totalArr[totalArr.length-1]= totalArr[totalArr.length-1]-$('.selected td.style-total-pcs').html();
                 
-                $('#tpcs').html(result);
-                $('#tpcs-1').html(result);
-                console.log("this is the number "+ result);
-                totalArr.push(result);
+                $('#tpcs').html(totalArr[totalArr.length-1]);
+                $('#tpcs-1').html(totalArr[totalArr.length-1]);
+                console.log("this are the total pcs "+ totalArr[totalArr.length-1]);
+                
+                
+                var mNy= $('.selected td.style-total-amount').html();
+                totalMoneyArr[totalMoneyArr-1]= totalMoneyArr[totalMoneyArr-1]- parseFloat(mNy.substring(2));
+                
+                $('#tmoney').html("$ "+totalMoneyArr[totalMoneyArr-1].toFixed(2));
+                $('#tmoney-1').html("$ "+totalMoneyArr[totalMoneyArr-1].toFixed(2));
+                console.log("this is the total money "+ totalMoneyArr[totalMoneyArr-1].toFixed(2));
+                
                 
                 $('.selected').remove();
                 
