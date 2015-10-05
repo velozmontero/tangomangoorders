@@ -20,7 +20,7 @@ var oDate= document.getElementById("odate");
 var sDate= document.getElementById("sdate");
 var cDate= document.getElementById("cdate");
 
-var totalArr= [0];
+var totalArr= [];
 var globalArr= [];
 
 var oNum1= Math.floor (Math.random()*9 + 1);
@@ -257,7 +257,6 @@ $('#add-style').on('click', function(){
 
 function calculatePcs(){
     var oTotalPcs=0;
-    var diff=0;
     for (var x=0; x<globalArr.length; x++) {
         oTotalPcs += globalArr[x].totalPcsCombined;
     }
