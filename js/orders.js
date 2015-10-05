@@ -267,8 +267,8 @@ function calculatePcs(){
 
 $('#add-style').on('click', function(){
     
-    totalArr.push(calculatePcs());
     calculatePcs();
+    totalArr.push(calculatePcs());
     
     var globalPcs = document.getElementById("tpcs");
     globalPcs.innerHTML = calculatePcs();
