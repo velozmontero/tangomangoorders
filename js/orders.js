@@ -255,27 +255,25 @@ $('#add-style').on('click', function(){
     });
 }*/
 
-function calculatePcs(){
-    var oTotalPcs=0;
-    for (var x=0; x<globalArr.length; x++) {
-        oTotalPcs += globalArr[x].totalPcsCombined;
-    }
-    
-    return oTotalPcs;
-    console.log(oTotalPcs);
-};
+
 
 $('#add-style').on('click', function(){
     
-    calculatePcs();
-    totalArr.push(calculatePcs());
+    totalArr[totalArr.length-1]=0;
+    for (var x=0; x<globalArr.length; x++) {
+        totalArr[totalArr.length-1] += globalArr[x].totalPcsCombined;
+    }
+
+    console.log(totalArr[totalArr.length-1]);
     
     var globalPcs = document.getElementById("tpcs");
-    globalPcs.innerHTML = calculatePcs();
+    globalPcs.innerHTML = totalArr[totalArr.length-1];
 
     var orderGlobalPcs = document.getElementById("tpcs-1");
     orderGlobalPcs.innerHTML = globalPcs.innerHTML;
  
+    
+    
     var orderTotalMoney=0;
     for (var x=0; x<globalArr.length; x++) {
         orderTotalMoney += globalArr[x].TotalPriceCombined;
