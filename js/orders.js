@@ -20,8 +20,6 @@ var oDate= document.getElementById("odate");
 var sDate= document.getElementById("sdate");
 var cDate= document.getElementById("cdate");
 
-var totalMoneyArr= [];
-var totalArr= [];
 var globalArr= [];
 
 var oNum1= Math.floor (Math.random()*9 + 1);
@@ -30,6 +28,7 @@ var oNum3= Math.floor (Math.random()*9 + 1);
 var oNum4= Math.floor (Math.random()*9 + 1);
 var oNum5= Math.floor (Math.random()*9 + 1);
 var oNum6= Math.floor (Math.random()*9 + 1);
+var globalTotal = 0;
 
 
 var stsn= document.getElementById("store-name");
@@ -197,97 +196,63 @@ $('#add-style').on('click', function(){
         '</td><td class="hide-on-med-and-down stp style-total-pcs">'+ addRandP +
         '</td><td class="hide-on-med-and-down sta style-total-amount">'+ '$ '+totalAmount +
         
-        '</td><td class="xxx hidden" >X</td></tr>');
-    
-    
-    
-    
-        $('#order').find('tbody:last-child').append(
-        '<tr><td>'+ orderStyle.value +
-        '</td><td>'+ styleColor.value +
-        
-        '</td><td class="hide-on-med-and-down">'+ description.value +
-        
-        '</td><td>'+ sizexs.value +
-        '</td><td>'+ sizes.value +
-        '</td><td>'+ sizem.value +
-        '</td><td>'+ sizel.value +
-        '</td><td>'+ sizexl.value +
-        '</td><td>'+ sizexxl.value +
-        
-        '</td><td class="hide-on-med-and-down">'+ totalRegPcs +
-        '</td><td class="hide-on-med-and-down">'+ '$ '+rPrice.value +
-        
-        '</td><td>'+ sizexxx.value +
-        '</td><td>'+ sizexxxx.value +
-        '</td><td>'+ sizexxxxx.value +
-        
-        '</td><td class="hide-on-med-and-down">'+ totalXPlusPcs +
-        '</td><td class="hide-on-med-and-down">'+ '$ '+xPrice.value +
-        
-        '</td><td class="hide-on-med-and-down stp-o style-total-pcs-o">'+ addRandP +
-        '</td><td class="hide-on-med-and-down sta-o style-total-amount-o">'+ '$ '+totalAmount +
-        '</td></tr>');    
+        '</td><td class="xxx hidden" >X</td></tr>');    
 });
 
 
 
 //Total values start//------------------
 
-/*function calculatePcs(){
-    
+function calculatePcs(){
+    $('#table-body').html("");
     oTotalPcs = 0;
     
     $(".style-total-pcs").each(function() {
         var value= $(this).text();
         if(!isNaN(value) && value.length !=0) {
             oTotalPcs+= parseInt(value);
-
-            var globalPcs = document.getElementById("tpcs");
-            globalPcs.innerHTML = parseInt(oTotalPcs);
-
-            var orderGlobalPcs = document.getElementById("tpcs-1");
-            orderGlobalPcs.innerHTML = parseInt(oTotalPcs);
-            
-            totalArr.push(oTotalPcs);
-            }
+        }
         
-        return oTotalPcs;
+        
     });
-}*/
-
-
-
-$('#add-style').on('click', function(){
-    
-    totalArr[totalArr.length-1]=0;
-    for (var x=0; x<globalArr.length; x++) {
-        totalArr[totalArr.length-1] += globalArr[x].totalPcsCombined;
-    }
-
-    console.log(totalArr[totalArr.length-1]);
-    
     var globalPcs = document.getElementById("tpcs");
-    globalPcs.innerHTML = totalArr[totalArr.length-1];
-
+    globalPcs.innerHTML = parseInt(oTotalPcs);
     var orderGlobalPcs = document.getElementById("tpcs-1");
-    orderGlobalPcs.innerHTML = globalPcs.innerHTML;
- 
+    orderGlobalPcs.innerHTML = parseInt(oTotalPcs);
+    return oTotalPcs;
+    $('#table-body').html($('#order-ow-tbody').html());
+}
+
+function calculateMoney(){
+    $('#table-body').html("");
+    oTotalMoney = 0;
     
-    
-    totalMoneyArr[totalMoneyArr-1]=0;
-    for (var x=0; x<globalArr.length; x++) {
-        totalMoneyArr[totalMoneyArr-1] += globalArr[x].TotalPriceCombined;
-    }
-    console.log(totalMoneyArr[totalMoneyArr-1]);
-    
+    $(".style-total-amount").each(function() {
+        var allValue= $(this).text();
+        var value= allValue.substring(2);
+        if(!isNaN(value) && value.length !=0) {
+            oTotalMoney+= parseFloat(value);
+        }  
+    });
     
     var globalmoney = document.getElementById("tmoney");
-    globalmoney.innerHTML = "$ "+totalMoneyArr[totalMoneyArr-1].toFixed(2);
+    globalmoney.innerHTML = "$ "+oTotalMoney.toFixed(2);
     
     
     var orderGlobalMoney= document.getElementById("tmoney-1");
     orderGlobalMoney.innerHTML = globalmoney.innerHTML; 
+    
+    return oTotalPcs.toFixed(2);
+    $('#table-body').html($('#order-ow-tbody').html());
+}
+
+
+$('#add-style').on('click', function(){
+    
+    calculatePcs();
+    
+    calculateMoney();
+
 });
 
 //Total values end //------------------/    
@@ -309,33 +274,13 @@ $(document).ready(function() {
             $(this).addClass('selected');
             $(this).find('.xxx').removeClass('hidden');
             
-            $('table#order-ow tr.selected td.xxx').on('click', function () { 
-                
-                totalArr[totalArr.length-1]= totalArr[totalArr.length-1]-$('.selected td.style-total-pcs').html();
-                
-                $('#tpcs').html(totalArr[totalArr.length-1]);
-                $('#tpcs-1').html(totalArr[totalArr.length-1]);
-                console.log("this are the total pcs "+ totalArr[totalArr.length-1]);
-                
-                
-                var mNy= $('.selected td.style-total-amount').html();
-                totalMoneyArr[totalMoneyArr-1]= totalMoneyArr[totalMoneyArr-1]- parseFloat(mNy.substring(2));
-                
-                $('#tmoney').html("$ "+totalMoneyArr[totalMoneyArr-1].toFixed(2));
-                $('#tmoney-1').html("$ "+totalMoneyArr[totalMoneyArr-1].toFixed(2));
-                console.log("this is the total money "+ totalMoneyArr[totalMoneyArr-1].toFixed(2));
-                
+            $(this).find('.xxx').on('click', function () { 
                 
                 $('.selected').remove();
                 
-                $('.stp').removeClass('style-total-pcs');
-                $('.sta').removeClass('style-total-amount');
-                $('#table-body').html($("#order-ow-tbody").html());
-                $('.stp').addClass('style-total-pcs');
-                $('.sta').addClass('style-total-amount');
-                $('.stp-o').addClass('style-total-pcs-o');
-                $('.sta-o').addClass('style-total-amount-o');
+                calculatePcs();
                 
+                calculateMoney();
             });
         }
     });
