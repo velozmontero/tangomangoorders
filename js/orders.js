@@ -204,7 +204,6 @@ $('#add-style').on('click', function(){
 //Total values start//------------------
 
 function calculatePcs(){
-    $('#table-body').html("");
     oTotalPcs = 0;
     
     $(".style-total-pcs").each(function() {
@@ -219,12 +218,10 @@ function calculatePcs(){
     globalPcs.innerHTML = parseInt(oTotalPcs);
     var orderGlobalPcs = document.getElementById("tpcs-1");
     orderGlobalPcs.innerHTML = parseInt(oTotalPcs);
-    return oTotalPcs;
-    $('#table-body').html($('#order-ow-tbody').html());
+    return oTotalPcs;  
 }
 
 function calculateMoney(){
-    $('#table-body').html("");
     oTotalMoney = 0;
     
     $(".style-total-amount").each(function() {
@@ -242,17 +239,18 @@ function calculateMoney(){
     var orderGlobalMoney= document.getElementById("tmoney-1");
     orderGlobalMoney.innerHTML = globalmoney.innerHTML; 
     
-    return oTotalPcs.toFixed(2);
-    $('#table-body').html($('#order-ow-tbody').html());
+    return oTotalPcs.toFixed(2); 
 }
 
 
 $('#add-style').on('click', function(){
+    $('#table-body').html("");
     
     calculatePcs();
     
     calculateMoney();
-
+    
+    $('#table-body').html($('#order-ow-tbody').html());
 });
 
 //Total values end //------------------/    
@@ -275,12 +273,13 @@ $(document).ready(function() {
             $(this).find('.xxx').removeClass('hidden');
             
             $(this).find('.xxx').on('click', function () { 
-                
+                $('#table-body').html("");
                 $('.selected').remove();
                 
                 calculatePcs();
                 
                 calculateMoney();
+                $('#table-body').html($('#order-ow-tbody').html());
             });
         }
     });
