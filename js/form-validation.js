@@ -34,7 +34,7 @@ function validateForm(theForm) {
     
     $.ajax({
         type: "POST",
-        url: "http://velozmontero.fvi-grad.com:3001/email",
+        url: "http://www.swolebrain.com:3999/email",
         data: form.serialize(),
         success: function (response) {
           $('#msg').html("Thank you for your business");    
