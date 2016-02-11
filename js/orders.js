@@ -441,3 +441,14 @@ $('#terms').change(function(){
 $('#ptr').click(function(){
     window.print();
 });
+
+var d = new Date();
+
+var month = d.getMonth()+1;
+var day = d.getDate();
+
+var year = d.getFullYear() 
+
+var output= (month<10 ? '0' : '') + month + '/' +(day<10 ? '0' : '') + day + '/' + year;
+
+$('#odate').val(output);
