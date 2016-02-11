@@ -5,129 +5,126 @@
         <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="http://velozmontero.fvi-grad.com/tangomangoorders/materialize/css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
         
-        <link type="text/css" rel="stylesheet" href="http://velozmontero.fvi-grad.com/tangomangoorders/css/style.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
         
-        <link rel="stylesheet" media="print" href="http://velozmontero.fvi-grad.com/tangomangoorders/css/print.css" type="text/css">
+        <link rel="stylesheet" media="print" href="css/print.css" type="text/css">
         
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     </head>
 
     <body>
-        <div class="container center">
-            <div class="row">
+        <div class="container center the-max-width">
+            <div class="row the-max-width">
                 <form method="post"
                 role="form" id="form" name="form" onsubmit="return validateForm(document.form);">
-                   <input type= "hidden" name="dest_email" value="velozmontero@gmail.com">
-                    
-                    
+                    <input type= "hidden" name="dest_email" value="velozmontero@gmail.com">
                         
-                        <div class="row p-bottom" style="background-color: #eeeeee">
-                            <div class="col s12">
-                                <div class="col s12 m12 l4">
-                                    <div class="input-field col s6">
-                                       <input type="text" id="order-style" name="order-style" class="center validate">
-                                       <label for="order-style">STYLE</label>
-                                    </div>
-                                    <div class="input-field col s6">
-                                       <input type="text" id="order-color" name="order-color" class="center validate">
-                                       <label for="order-color">COLOR</label>
-                                    </div>
+                    <div class="row p-bottom no-print" style="background-color: #eeeeee">
+                        <div class="col s12">
+                            <div class="col s12 m12 l4">
+                                <div class="input-field col s6">
+                                   <input type="text" id="order-style" name="order-style" class="center validate">
+                                   <label for="order-style">STYLE</label>
                                 </div>
-
-                                <div class="col s12 m12 l8">
-                                    <div class="input-field col s2">
-                                       <input type="number" min="0" max="5000" id="size-xs" name="size-xs" class="center validate">
-                                       <label for="size-xs">XS</label>
-                                    </div>
-                                    <div class="input-field col s2">
-                                       <input type="number" min="0" max="5000" id="size-s" name="size-s" class="center validate">
-                                       <label for="size-s">S</label>
-                                    </div>
-                                    <div class="input-field col s2">
-                                       <input type="number" min="0" max="5000" id="size-m" name="size-m" class="center validate">
-                                       <label for="size-m">M</label>
-                                    </div>
-                                    <div class="input-field col s2">
-                                       <input type="number" min="0" max="5000" id="size-l" name="size-l" class="center validate">
-                                       <label for="size-l">L</label>
-                                    </div>
-                                    <div class="input-field col s2">
-                                       <input type="number" min="0" max="5000" id="size-xl" name="size-xl" class="center validate">
-                                       <label for="size-xl">XL</label>
-                                    </div>
-                                    <div class="input-field col s2">
-                                       <input type="number" min="0" max="5000" id="size-xxl" name="size-xxl" class="center validate">
-                                       <label for="size-xxl">XXL</label>
-                                    </div>
+                                <div class="input-field col s6">
+                                   <input type="text" id="order-color" name="order-color" class="center validate">
+                                   <label for="order-color">COLOR</label>
                                 </div>
+                            </div>
+
+                            <div class="col s12 m12 l8">
+                                <div class="input-field col s2">
+                                   <input type="number" min="0" max="5000" id="size-xs" name="size-xs" class="center validate">
+                                   <label for="size-xs">XS</label>
+                                </div>
+                                <div class="input-field col s2">
+                                   <input type="number" min="0" max="5000" id="size-s" name="size-s" class="center validate">
+                                   <label for="size-s">S</label>
+                                </div>
+                                <div class="input-field col s2">
+                                   <input type="number" min="0" max="5000" id="size-m" name="size-m" class="center validate">
+                                   <label for="size-m">M</label>
+                                </div>
+                                <div class="input-field col s2">
+                                   <input type="number" min="0" max="5000" id="size-l" name="size-l" class="center validate">
+                                   <label for="size-l">L</label>
+                                </div>
+                                <div class="input-field col s2">
+                                   <input type="number" min="0" max="5000" id="size-xl" name="size-xl" class="center validate">
+                                   <label for="size-xl">XL</label>
+                                </div>
+                                <div class="input-field col s2">
+                                   <input type="number" min="0" max="5000" id="size-xxl" name="size-xxl" class="center validate">
+                                   <label for="size-xxl">XXL</label>
+                                </div>
+                            </div>
 
 
+                            <div class="input-field col s12">
+                                <div class="input-field col s5"><h5 class="grey-text">PRICE: <span class="right">$</span></h5></div>
+                                <div class="input-field col s3 l2 no-padding">
+                                    <input type="number" step="0.01" min="0" max="500" id="r-price" name="r-price" class="validate box-border center">
+                                </div>
+                            </div>     
+
+                            <div class="col s12 b-color">
+
+                                <div class="input-field col s5"><h5 class="grey-text"><i><strong>PLUS SIZES</strong></i></h5></div>
+
+                                <div class="col s7">
+                                    <div class="input-field col s4">
+                                       <input type="number" min="0" max="5000" id="size-1x" name="size-1x" class="center validate">
+                                       <label for="size-1x">1X</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                       <input type="number" min="0" max="5000" id="size-2x" name="size-2x" class="center validate">
+                                       <label for="size-2x">2X</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                       <input type="number" min="0" max="5000" id="size-3x" name="size-3x" class="center validate">
+                                       <label for="size-3x">3X</label>
+                                    </div> 
+                                </div>
                                 <div class="input-field col s12">
-                                    <div class="input-field col s5"><h5 class="grey-text">PRICE: <span class="right">$</span></h5></div>
+                                    <div class="input-field col s5"><h5 class="grey-text"><i><strong>PRICE:</strong></i><span class="right">$</span></h5></div>
                                     <div class="input-field col s3 l2 no-padding">
-                                        <input type="number" step="0.01" min="0" max="500" id="r-price" name="r-price" class="validate box-border center">
-                                    </div>
-                                </div>     
-                            
-                           
-                                <div class="col s12 b-color">
-                                    
-                                    <div class="input-field col s5"><h5 class="grey-text"><i><strong>PLUS SIZES</strong></i></h5></div>
-                                    
-                                    <div class="col s7">
-                                        <div class="input-field col s4">
-                                           <input type="number" min="0" max="5000" id="size-1x" name="size-1x" class="center validate">
-                                           <label for="size-1x">1X</label>
-                                        </div>
-                                        <div class="input-field col s4">
-                                           <input type="number" min="0" max="5000" id="size-2x" name="size-2x" class="center validate">
-                                           <label for="size-2x">2X</label>
-                                        </div>
-                                        <div class="input-field col s4">
-                                           <input type="number" min="0" max="5000" id="size-3x" name="size-3x" class="center validate">
-                                           <label for="size-3x">3X</label>
-                                        </div> 
-                                    </div>
-                                    <div class="input-field col s12">
-                                        <div class="input-field col s5"><h5 class="grey-text"><i><strong>PRICE:</strong></i><span class="right">$</span></h5></div>
-                                        <div class="input-field col s3 l2 no-padding">
                                         <input type="number" step="0.01" min="0.00" max="500.00" id="x-price" name="x-price" class="validate box-border center">
                                     </div>
-                                   </div> 
-                                </div>  
-                            
-                                <div class="col s12">
-                                    <div class="input-field col s12">
-                                      <textarea id="description" name="description" class="materialize-textarea no-padding"></textarea>
-                                      <label for="description">Description: </label>
-                                    </div>
+                               </div> 
+                            </div>  
+
+                            <div class="col s12">
+                                <div class="input-field col s12">
+                                  <textarea id="description" name="description" class="no-print materialize-textarea no-padding"></textarea>
+                                  <label for="description">Description: </label>
                                 </div>
                             </div>
-                            
-                            <!--buttons start-->
-                            
-                                <div class="col s6 center m-top">
-                                    <div class="btn-add-clear btn waves-effect green darken-3  waves-light z-depth-2 " name="add-style" id="add-style">ADD STYLE
-                                    <i class="material-icons prefix right">assignment</i>
-                                    </div>
+                        </div>
+
+                        <!--buttons start-->
+
+                            <div class="col s6 center m-top">
+                                <div class="btn-add-clear btn waves-effect green darken-3  waves-light z-depth-2 " name="add-style" id="add-style">ADD STYLE
+                                <i class="material-icons prefix right">assignment</i>
                                 </div>
-                                 <div class="col s6 center m-top">
-                                    <div class="btn-add-clear btn waves-effect red darken-3  waves-light z-depth-2 " name="clear-style" id="clear-style">CLEAR 
-                                    <i class="material-icons prefix right">list</i>
-                                    </div>
-                                </div>
-                            
-                            <!--buttons end-->
-                            
                             </div>
+                             <div class="col s6 center m-top">
+                                <div class="btn-add-clear btn waves-effect red darken-3  waves-light z-depth-2 " name="clear-style" id="clear-style">CLEAR 
+                                <i class="material-icons prefix right">list</i>
+                                </div>
+                            </div>
+
+                        <!--buttons end-->
+
+                        </div>
                     
                     
-                        <h5>ORDER OVERVIEW</h5>
-                        <div class="row">
-                            <table class="striped centered" id="order-ow" name="order-ow">
+                        <h5 class="no-print">ORDER OVERVIEW</h5>
+                        <div class="row no-print">
+                            <table class="striped centered" id="order-ow" name="order-ow" style="width: 100%;">
                                 
                                <thead style="width: 100%;">
                                       <tr style="width: 100%;">
@@ -156,7 +153,7 @@
                                       </tr>
                                     </thead>
 
-                                <tbody id="order-ow-tbody" name="order-ow-tbody">
+                                <tbody id="order-ow-tbody" name="order-ow-tbody" style="width: 100%;">
                                   
                                 </tbody>
                               </table>
@@ -174,11 +171,8 @@
                             </table>
                                    
                         </div>
-                    
-                    
-                    
-                        
-                        <div class="row">
+          
+                        <div class="row no-print">
                             <div class="col s12 m6">
                                  <div class="input-field col s2  " style="display: block;">
                                     <i class="material-icons prefix" style="position: relative !important;">payment</i>   
@@ -223,7 +217,7 @@
                             
                         </div> 
                         
-                        <div class="row">
+                        <div class="row no-print">
                             <div class="input-field col s12 m12 l4 no-padding">
                                 <div class="input-field col s4 m4 l4 no-padding"><label for="odate">Order Date:</label></div>
                                 <div class="input-field col s8 m8 l8"><input id="odate" name="odate" type="date" class="datepicker" style="text-align: center" required></div>
@@ -240,7 +234,7 @@
                             </div>
                         </div>
                         
-                        <div class="row">
+                        <div class="row no-print">
                             <div class="input-field col s12 l6">
                                <i class="material-icons prefix">store</i>
                                <input type="text" id="store-name" name="store-name" class="validate" required>
@@ -254,7 +248,7 @@
                            </div>
                         </div>
                         
-                        <div class="row">    
+                        <div class="row no-print">    
                             <div class="input-field col s12 l6">
                                 <i class="material-icons prefix">email</i>
                                <input type="email" id="email" name="email" class="validate" required>
@@ -268,7 +262,7 @@
                             </div>
                         </div>
                         
-                        <div class="row p-bottom">    
+                        <div class="row p-bottom no-print">    
                             <div class="input-field col s12 m12 l6 no-padding b-color1" style="height: 176px;">
                                
                                 <div class="input-field col s12" style="margin-top: 54px;">
@@ -442,18 +436,15 @@
                             
                        
                         
-                        <div class="row">
- 
+                        <div id="sipInst" class="row no-print">
                             <div class="input-field col s12">
-                                  <textarea id="shipping-instructions" class="materialize-textarea no-padding"></textarea>
-                                  <label for="shipping-instructions">Shipping Instructions:</label>
+                                  <textarea id="shipping-instructions" class="no-print materialize-textarea no-padding"></textarea>
+                                  <label class="no-print" for="shipping-instructions">Shipping Instructions:</label>
                             </div>
                         </div> 
                     
-                    
-    
                     <div id="main-email-body">
-                    <table style="width: 100%;">
+                        <table style="width: 100%;">
                                 <table style="width: 100%;">
                                     <thead style="width: 100%;">
                                        
@@ -589,22 +580,27 @@
                                 </table>    
                             
                         </table> 
-            </div>
-            
-            <input type="hidden" id="htmltable" name="htmltable" value="">
+                    </div>
+              
+                    <input type="hidden" id="htmltable" name="htmltable" value="">
             
                     
-                    <div class="row p-top">
-                            <input type= "hidden" name="dest_email" value="velozmontero@gmail.com">
+                    <div class="row p-top no-print">
+                        <input type= "hidden" name="dest_email" value="velozmontero@gmail.com">
 
-                            <div class="center">
-                                <button class="btn waves-effect grey darken-3 waves-light z-depth-2 " type="submit" name="btn" id="btn">Send
-                                <i class="material-icons prefix right">send</i>
-                                </button>
-                                <div class="hidden" id="msg" name="btn" class="hidden"></div>
+                        <div class="center">
+                            <button class="btn waves-effect grey darken-3 waves-light z-depth-2 " type="submit" name="btn" id="btn">Send
+                            <i class="material-icons prefix right">send</i>
+                            </button>
+                            <div class="hidden" id="msg" name="btn" class="hidden"></div>
+                        
+                            <div class="btn waves-effect grey darken-3 waves-light z-depth-2 " name="ptr" id="ptr">Print
+                            <i class="material-icons prefix right">print</i>
                             </div>
-                            
+                            <div class="hidden" id="msg" name="btn" class="hidden"></div>
                         </div>
+                    </div>
+                       
                 </form>   
             </div>
         </div>
@@ -620,8 +616,8 @@
             format: 'mmm/dd/yyyy'
         });</script>
         
-        <script type="text/javascript" src="http://velozmontero.fvi-grad.com/tangomangoorders/js/orders.js"></script>
+        <script type="text/javascript" src="js/orders.js"></script>
         
-        <script type="text/javascript" src="http://velozmontero.fvi-grad.com/tangomangoorders/js/form-validation.js"></script>
+        <script type="text/javascript" src="js/form-validation.js"></script>
     </body>
   </html>

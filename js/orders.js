@@ -194,9 +194,8 @@ $('#add-style').on('click', function(){
         '</td><td class="hide-on-med-and-down">'+ '$ '+xPrice.value +
         
         '</td><td class="hide-on-med-and-down stp style-total-pcs">'+ addRandP +
-        '</td><td class="hide-on-med-and-down sta style-total-amount">'+ '$ '+totalAmount +
+        '</td><td class="hide-on-med-and-down sta style-total-amount">'+ '$ '+totalAmount + '<td class="xxx hidden no-print" >X</td></td></tr>');
         
-        '</td><td class="xxx hidden" >X</td></tr>');    
 });
 
 
@@ -439,3 +438,6 @@ $('#terms').change(function(){
     $('#terms-1').html("Terms: "+terms.value);
 });
 
+$('#ptr').click(function(){
+    window.print();
+});
