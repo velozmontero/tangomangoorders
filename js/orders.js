@@ -452,3 +452,5 @@ var year = d.getFullYear()
 var output= (month<10 ? '0' : '') + month + '/' +(day<10 ? '0' : '') + day + '/' + year;
 
 $('#odate').val(output);
+$('#order-date').html("Order date: " + output);
+
