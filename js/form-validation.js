@@ -34,7 +34,7 @@ function validateForm(theForm) {
     
     $.ajax({
         type: "POST",
-        url: "http://www.swolebrain.com:3999/email",
+        url: "http://159.203.70.55:3999/email",
         data: form.serialize(),
         success: function (response) {
           $('#msg').html("Thank you for your business");    

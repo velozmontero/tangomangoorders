@@ -64,15 +64,15 @@ $('#order-number').html("PO#: "+oNum1+oNum2+oNum3+oNum4+oNum5+oNum6);
 
 //Insert dates on order start //------------------------
 
-$('#odate').change(function(){
+$('#odate').on('keyup',function(){
     $('#order-date').html("Order date: "+ oDate.value);
 });
 
-$('#sdate').change(function(){
+$('#sdate').on('keyup',function(){
     $('#ship-date').html("Ship start: "+ sDate.value);
 });
 
-$('#cdate').change(function(){
+$('#cdate').on('keyup',function(){
     $('#cancel-date').html("Cancel date: "+ cDate.value);
 });
 
@@ -310,28 +310,28 @@ $('#clear-style').on('click', function(){
 //Check box handler start //-----------------
 
 
-    $('#store-address').change(function(){
+    $('#store-address').on('keyup',function(){
         if (sameAS.checked){
             $("#ship-address").val(storeAdd.value).trigger( "focusin" );
             $('#ship-to-address').html(storeAdd.value);
         }    
     });
 
-    $('#address-city').change(function(){
+    $('#address-city').on('keyup',function(){
         if (sameAS.checked){
             $("#ship-city").val(addCity.value).trigger( "focusin" );
             $('#ship-to-city').html(" "+addCity.value);
         }    
     });
 
-    $('#state-1').change(function(){
+    $('#state-1').on('change',function(){
         if (sameAS.checked){
             $("#state-2").val(state.value).trigger( "focusin" );
             $('#ship-to-state').html(" "+state.value+",");
         }    
     });
 
-    $('#address-zip-code').change(function(){
+    $('#address-zip-code').on('keyup',function(){
         if (sameAS.checked){
             $("#ship-zip-code").val(aZipCode.value).trigger( "focusin" );
             $('#ship-to-zip_code').html(" "+aZipCode.value);
