@@ -28,12 +28,16 @@
     }
     #main-email-body{
          top: 40px;
-         position:relative;
+         position:absolute;
          width:100%;
          z-index:15;
     }
     .the-max-width{
         width:100%;
+    }
+    
+    textarea {
+      display: none;
     }
 }
 

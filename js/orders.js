@@ -171,7 +171,7 @@ $('#add-style').on('click', function(){
     //push info to global array end//------------------------/
     
     $('#order-ow').find('tbody:last-child').append(
-        '<tr><td>'+ orderStyle.value +
+        '<tr style="width: 100%;"><td>'+ orderStyle.value +
         '</td><td>'+ styleColor.value +
         
         '</td><td class="hide-on-med-and-down">'+ description.value +
